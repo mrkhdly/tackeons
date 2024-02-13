@@ -1,5 +1,4 @@
-# tackeons
-## Fork of Tachyons v5 beta
+# tackeons - A fork of Tachyons v5 beta
 
 ### Local Setup
 
