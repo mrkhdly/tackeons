@@ -329,10 +329,6 @@
   --letter-spacing-tight: -0.05em;
   --letter-spacing-large: 0.25em;
 
-  --font-family-heading: Inter, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; 
-  --font-family-body: Inter, -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto, arial, sans-serif; 
-  --font-family-mono: Inconsolata, Menlo, Consolas, Monaco, Liberation Mono, Lucida Console, monospace;
-
   --spacing-0: 0;
   --spacing-1: 2px;
   --spacing-2: 4px;
