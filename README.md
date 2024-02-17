@@ -1,4 +1,15 @@
 # tackeons - A fork of Tachyons v5 beta
+```
+   __             __                        
+  / /_____ ______/ /_____  ____  ____  _____
+ / __/ __ `/ ___/ //_/ _ \/ __ \/ __ \/ ___/
+/ /_/ /_/ / /__/ ,< /  __/ /_/ / / / (__  ) 
+\__/\__,_/\___/_/|_|\___/\____/_/ /_/____/
+```
+### Changes
+- Replaced normalize.css with modern-normalize.css\
+- Removed font-family variables & replaced rules w/utilities ones
+- Added font-family rules for https://github.com/system-fonts/modern-font-stacks
 
 ### Local Setup
 
