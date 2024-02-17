@@ -1,11 +1,12 @@
 # tackeons - A fork of Tachyons v5 beta
-```
+<pre>
    __             __                        
   / /_____ ______/ /_____  ____  ____  _____
  / __/ __ `/ ___/ //_/ _ \/ __ \/ __ \/ ___/
 / /_/ /_/ / /__/ ,< /  __/ /_/ / / / (__  ) 
 \__/\__,_/\___/_/|_|\___/\____/_/ /_/____/
-```
+</pre>
+
 ### Changes
 - Replaced [normalize.css](https://github.com/necolas/normalize.css/) with [modern-normalize.css](https://github.com/sindresorhus/modern-normalize)
 - Removed font-family variables & replaced rules w/utilities ones
