@@ -7,7 +7,7 @@
 \__/\__,_/\___/_/|_|\___/\____/_/ /_/____/
 ```
 ### Changes
-- Replaced normalize.css with modern-normalize.css\
+- Replaced [normalize.css](https://github.com/necolas/normalize.css/) with [modern-normalize.css](https://github.com/sindresorhus/modern-normalize)
 - Removed font-family variables & replaced rules w/utilities ones
 - Added font-family rules for https://github.com/system-fonts/modern-font-stacks
 
