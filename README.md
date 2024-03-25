@@ -11,6 +11,7 @@
 - Replaced [normalize.css](https://github.com/necolas/normalize.css/) with [modern-normalize.css](https://github.com/sindresorhus/modern-normalize)
 - Removed font-family variables & replaced rules w/utilities ones
 - Added font-family rules for https://github.com/system-fonts/modern-font-stacks
+- Added rules for grey so can use either spelling
 
 ### Local Setup
 
