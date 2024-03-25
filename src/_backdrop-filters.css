@@ -18,9 +18,9 @@
 .blur2 { filter: blur(16px); }
 .blur3 { filter: blur(96px); }
 
-.grayscale1 { filter: grayscale(0); }
-.grayscale2 { filter: grayscale(50%); }
-.grayscale3 { filter: grayscale(100%); }
+.grayscale1, .greyscale1 { filter: grayscale(0); }
+.grayscale2, .greyscale2 { filter: grayscale(50%); }
+.grayscale3, .greyscale3 { filter: grayscale(100%); }
 
 .hue-rotate0 { filter: hue-rotate(0deg);}
 .hue-rotate1 { filter: hue-rotate(45deg);}
@@ -41,9 +41,9 @@
 .blur2-hover:hover { filter: blur(16px); }
 .blur3-hover:hover { filter: blur(96px); }
 
-.grayscale1-hover:hover { filter: grayscale(0); }
-.grayscale2-hover:hover { filter: grayscale(50%); }
-.grayscale3-hover:hover { filter: grayscale(100%); }
+.grayscale1-hover:hover, .greyscale1-hover:hover { filter: grayscale(0); }
+.grayscale2-hover:hover, .greyscale2-hover:hover { filter: grayscale(50%); }
+.grayscale3-hover:hover, .greyscale3-hover:hover { filter: grayscale(100%); }
 
 .hue-rotate0-hover:hover { filter: hue-rotate(0deg);}
 .hue-rotate1-hover:hover { filter: hue-rotate(45deg);}
@@ -60,9 +60,9 @@
 .blur2-focus:focus { filter: blur(16px); }
 .blur3-focus:focus { filter: blur(96px); }
 
-.grayscale1-focus:focus { filter: grayscale(0); }
-.grayscale2-focus:focus { filter: grayscale(50%); }
-.grayscale3-focus:focus { filter: grayscale(100%); }
+.grayscale1-focus:focus, .greyscale1-focus:focus { filter: grayscale(0); }
+.grayscale2-focus:focus, .greyscale2-focus:focus { filter: grayscale(50%); }
+.grayscale3-focus:focus, .greyscale3-focus:focus { filter: grayscale(100%); }
 
 .hue-rotate0-focus:focus { filter: hue-rotate(0deg);}
 .hue-rotate1-focus:focus { filter: hue-rotate(45deg);}

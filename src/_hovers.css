@@ -172,6 +172,6 @@
 .hover-filter-blur-none:hover { filter: blur(0); }
 .hover-filter-blur:hover { filter: blur(96px); }
 
-.hover-grayscale-0:hover { filter: grayscale(0); }
-.hover-grayscale-50:hover { filter: grayscale(50%); }
-.hover-grayscale-100:hover { filter: grayscale(100%); }
+.grayscale1-hover:hover, .greyscale1-hover:hover { filter: grayscale(0); }
+.grayscale2-hover:hover, .greyscale2-hover:hover { filter: grayscale(50%); }
+.grayscale3-hover:hover, .greyscale3-hover:hover { filter: grayscale(100%); }
