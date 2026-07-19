@@ -384,5 +384,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  --shadow-color: 255 255 255;
+  :root {
+    --shadow-color: 255 255 255;
+  }
 }
