@@ -73,7 +73,17 @@ refactors, build migration, and documentation drafts — is executed by LLM
 coding agents working from written tickets with explicit acceptance
 criteria, reviewed before merge.
 
-## License / credit
+## License & Credits
 
-MIT. Built on the shoulders of [Tachyons](https://tachyons.io) by
-[Adam Morse](https://mrmrs.cc) and [John Otander](https://johno.com).
+MIT.
+
+tackeons is built on and includes code from these projects:
+
+| Project | Role |
+|---------|------|
+| [Tachyons](https://github.com/tachyons-css/tachyons) | Origin framework by [Adam Morse](https://mrmrs.cc) & [John Otander](https://johno.com) |
+| [PostCSS](https://github.com/postcss/postcss) | CSS build pipeline |
+| [postcss-import](https://github.com/postcss/postcss-import) | Module resolution |
+| [cssnano](https://github.com/cssnano/cssnano) | CSS minification |
+| [modern-normalize](https://github.com/sindresorhus/modern-normalize) | Vendored CSS reset |
+| [modern-font-stacks](https://github.com/system-fonts/modern-font-stacks) | System font families |
