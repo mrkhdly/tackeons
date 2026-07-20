@@ -11,6 +11,10 @@
 
 */
 
+/* Default: the page root is an inline-size container, so -s/-m/-l responsive
+   variants work out of the box. Opt out on any subtree with .container-normal. */
+html { container-type: inline-size; }
+
 .container-size { container-type: size; }
 .root,
 .container-inline { container-type: inline-size; }
