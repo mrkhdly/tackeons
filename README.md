@@ -45,8 +45,8 @@ See [CHANGELOG.md](CHANGELOG.md).
 
 ## AI-assisted development
 
-tackeons is directed by a human maintainer: all ideas, design decisions,
-and final judgment calls are the maintainer's. Implementation — code edits,
+tackeons is directed by [Mark Hadley](https://github.com/mrkhdly): all ideas, design decisions,
+and final judgment calls are Mark's. Implementation — code edits,
 refactors, build migration, and documentation drafts — is executed by LLM
 coding agents working from written tickets with explicit acceptance
 criteria, reviewed before merge.
