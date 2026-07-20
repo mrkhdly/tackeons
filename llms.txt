@@ -1,0 +1,430 @@
+# tackeons CSS
+
+> A streamlined fork of Tachyons CSS. Functional CSS for humans, modernized.
+
+tackeons is a functional/atomic CSS framework providing single-purpose utility classes. Compose classes directly in HTML instead of writing CSS. Container-query responsive, dark/light scheme aware, with glass, gradient, and filter effects.
+
+## Project Structure
+
+```
+/css/                 # Compiled CSS output
+  tackeons.css        # Full compiled CSS
+  tackeons.min.css    # Minified production CSS
+  tachyons.css        # Deprecated shim (do not use in new projects)
+
+/src/                 # Source CSS modules (PostCSS)
+  tackeons.css        # Main entry point importing all modules
+  _*.css              # Individual module files (prefixed with underscore)
+```
+
+## Core Principles
+
+- Everything should be 100% responsive
+- Single-purpose class structure (one class = one CSS property)
+- Mobile-first, container-query based architecture
+- 8px baseline grid for spacing
+- Design in the browser
+- Changes to one interface shouldn't break others
+
+## Quick Start
+
+```
+npm install tackeons
+```
+
+```html
+<link rel="stylesheet" href="node_modules/tackeons/css/tackeons.min.css">
+```
+
+## Naming Conventions
+
+### Base + Modifier Pattern
+Classes follow `{property}{value}` or `{property}{direction}{value}`
+
+Examples:
+- `pa3` = padding-all: 1rem
+- `mt2` = margin-top: 0.5rem
+- `f4` = font-size: 1.25rem
+- `w-50` = width: 50%
+
+### Container Query Suffixes
+tackeons uses container queries instead of `@media`. The `html` element defaults to `container-type: inline-size`, so responsive suffixes work anywhere on the page. Opt-out subtrees with `.container-normal`.
+
+| Suffix | Container width | Description |
+|--------|----------------|-------------|
+| (none) | All | Mobile-first base styles |
+| `-s`   | ≥30em (480px) | Small container and up |
+| `-m`   | ≥48em (768px) | Medium container and up |
+| `-l`   | ≥64em (1024px) | Large container and up |
+
+Example: `dn db-s` = display:none on narrow containers, display:block on ≥30em
+
+## Dark / Light Scheme
+
+Semantic color variables with automatic dark-scheme overrides:
+
+```css
+/* Light (default) */
+--color-primary: blue;
+--color-bg: white;
+--color-text: near-black;
+
+/* Dark (auto-applied via prefers-color-scheme) */
+--color-primary: light-blue;
+--color-bg: near-black;
+--color-text: near-white;
+```
+
+Classes use these variables, so `bg-primary` / `primary` / `b--primary` adapt automatically to the user's OS color scheme.
+
+## Spacing Scale
+
+Powers of two (8px baseline):
+
+| Step | Value | CSS Variable |
+|------|-------|--------------|
+| 0 | 0 | --spacing-none |
+| 1 | 0.25rem (4px) | --spacing-extra-small |
+| 2 | 0.5rem (8px) | --spacing-small |
+| 3 | 1rem (16px) | --spacing-medium |
+| 4 | 2rem (32px) | --spacing-large |
+| 5 | 4rem (64px) | --spacing-extra-large |
+| 6 | 8rem (128px) | --spacing-extra-extra-large |
+| 7 | 16rem (256px) | --spacing-extra-extra-extra-large |
+
+### Spacing Classes
+- **Padding**: `pa`, `pl`, `pr`, `pt`, `pb`, `pv` (vertical), `ph` (horizontal)
+- **Margin**: `ma`, `ml`, `mr`, `mt`, `mb`, `mv` (vertical), `mh` (horizontal)
+
+Examples: `pa3`, `mt4`, `ph2-s`, `mb0-l`
+
+## Type Scale
+
+| Class | Size |
+|-------|------|
+| `.f-headline`, `.f-6` | 6rem |
+| `.f-subheadline`, `.f-5` | 5rem |
+| `.f1` | 3rem |
+| `.f2` | 2.25rem |
+| `.f3` | 1.5rem |
+| `.f4` | 1.25rem |
+| `.f5` | 1rem |
+| `.f6` | 0.875rem |
+| `.f7` | 0.75rem |
+
+## Width Scale
+
+### Fixed Widths (powers of 2)
+`.w1` (1rem), `.w2` (2rem), `.w3` (4rem), `.w4` (8rem), `.w5` (16rem)
+
+### Percentage Widths
+`.w-10` through `.w-90` in 10% steps, plus `.w-25`, `.w-33`, `.w-34`, `.w-50`, `.w-60`, `.w-70`, `.w-75`, `.w-80`, `.w-90`, `.w-100`
+Aliases: `.w-third`, `.w-two-thirds`, `.w-auto`
+
+## Color System
+
+### Grayscale (both spellings supported)
+`black`, `near-black`, `dark-gray` / `dark-grey`, `mid-gray` / `mid-grey`, `gray` / `grey`, `silver`, `light-silver`, `moon-gray` / `moon-grey`, `light-gray` / `light-grey`, `near-white`, `white`
+
+### Transparency
+- Black: `black-90` through `black-05` (90% to 5% opacity)
+- White: `white-90` through `white-10`
+
+### Colors
+`dark-red`, `red`, `light-red`, `orange`, `gold`, `yellow`, `light-yellow`, `purple`, `light-purple`, `dark-pink`, `hot-pink`, `pink`, `light-pink`, `dark-green`, `green`, `light-green`, `navy`, `dark-blue`, `blue`, `light-blue`, `lightest-blue`, `washed-blue`, `washed-green`, `washed-yellow`, `washed-red`
+
+### Color Classes
+- **Text color**: Use color name directly (e.g., `blue`, `dark-gray`)
+- **Background**: Prefix with `bg-` (e.g., `bg-blue`, `bg-dark-gray`)
+- **Border**: Prefix with `b--` (e.g., `b--blue`, `b--dark-gray`)
+
+### Grey/Gray Border Colors
+Numbered border-color classes: `.b--grey-0` through `.b--grey-9`, `.b--gray-0` through `.b--gray-9`
+
+## Glass & Effects
+
+### Glass Morphism
+`glass1` through `glass10` — frosted-glass panels with configurable background opacity and blur. Includes hover (`glass1-hover` through `glass10-hover`) and focus (`glass1-focus` through `glass10-focus`) variants.
+
+Customize via CSS variables:
+```css
+--glass-bg: rgba(255, 255, 255, 0.15);
+--glass-blur: 20px;
+```
+
+### Gradients
+Background gradient utilities: `.gradient-1` through `.gradient-4`. Override the angle:
+```css
+--gradient-degree: 135deg;
+```
+
+### Filters
+CSS filter effects: `.blur-1` through `.blur-5`, `.brightness-1` through `.brightness-5`, `.contrast-1` through `.contrast-5`
+
+### Backdrop Filters
+Apply filters behind elements: `.backdrop-blur-1` through `.backdrop-blur-5`, `.backdrop-brightness-1` through `.backdrop-brightness-5`
+
+## Grid System
+
+CSS Grid utilities alongside the traditional float/flexbox systems:
+
+- **Grid container**: `.grid`
+- **Grid columns**: `.grid-column-1` through `.grid-column-12`, `.grid-column-auto`
+- **Grid rows**: `.grid-row-1` through `.grid-row-6`, `.grid-row-auto`
+- **Template columns**: `.grid-cols-1` through `.grid-cols-6`
+- **Gap**: `.gap-0` through `.gap-7` (all sides)
+- **Column gap**: `.gap-column-0` through `.gap-column-7`
+- **Row gap**: `.gap-row-0` through `.gap-row-7`
+
+All grid classes support container query suffixes: `.grid-column-6-s`, `.gap-3-l`, etc.
+
+## Common Class Categories
+
+### Display
+`dn` (none), `di` (inline), `db` (block), `dib` (inline-block), `dt` (table), `dtc` (table-cell), `flex`, `inline-flex`, `grid`, `inline-grid`
+
+### Flexbox
+- Container: `flex`, `inline-flex`, `flex-column`, `flex-row`, `flex-wrap`, `flex-nowrap`
+- Direction: `flex-row`, `flex-row-reverse`, `flex-column`, `flex-column-reverse`
+- Wrap: `flex-wrap`, `flex-nowrap`, `flex-wrap-reverse`
+- Alignment: `items-center`, `items-start`, `items-end`, `items-baseline`, `items-stretch`
+- Justify: `justify-center`, `justify-start`, `justify-end`, `justify-between`, `justify-around`, `justify-evenly`
+- Self: `self-center`, `self-start`, `self-end`, `self-stretch`, `self-auto`
+- Flex: `flex-auto`, `flex-none`, `flex-grow-0`, `flex-grow-1`, `flex-shrink-0`, `flex-shrink-1`
+- Order: `order-0` through `order-8`, `order-first`, `order-last`
+
+### Position
+`static`, `relative`, `absolute`, `fixed`, `sticky`
+
+### Coordinates
+`top-0`, `right-0`, `bottom-0`, `left-0`, `top-1`, `top-2`, etc. Includes auto: `top-auto`, `right-auto`, etc.
+
+### Border Radius
+`br0`, `br1`, `br2`, `br3`, `br4`, `br-100` (circle), `br-pill` (rounded pill)
+Directional: `br--top`, `br--bottom`, `br--left`, `br--right`
+
+### Borders
+- Width: `bw0`, `bw1`, `bw2`, `bw3`, `bw4`, `bw5`
+- Style: `b--solid`, `b--dashed`, `b--dotted`, `b--none`
+- Sides: `ba` (all), `bt` (top), `br` (right), `bb` (bottom), `bl` (left), `bn` (none)
+
+### Typography
+- Weight: `fw1` (100) through `fw9` (900), `normal`, `b` (bold)
+- Style: `i` (italic), `fs-normal`
+- Alignment: `tl` (left), `tr` (right), `tc` (center), `tj` (justify)
+- Transform: `ttc` (capitalize), `ttl` (lowercase), `ttu` (uppercase), `ttn` (none)
+- Decoration: `no-underline`, `underline`, `strike`
+- Line height: `lh-solid` (1), `lh-title` (1.25), `lh-copy` (1.5)
+- Letter spacing: `tracked`, `tracked-tight`, `tracked-mega`
+
+### Opacity
+`.o-0` through `.o-100` in 5% steps, plus `.o-10` through `.o-90` in 10% steps
+
+### Visibility
+`v-hidden`, `v-visible`, `clip` (visually hidden but accessible)
+
+### Overflow
+`overflow-visible`, `overflow-hidden`, `overflow-scroll`, `overflow-auto`
+Axis-specific: `overflow-x-visible`, `overflow-y-hidden`, etc.
+
+### Heights
+Fixed: `h1`, `h2`, `h3`, `h4`, `h5` (1rem to 16rem)
+Percentage: `h-25`, `h-50`, `h-75`, `h-100`
+Viewport: `vh-25`, `vh-50`, `vh-75`, `vh-100`, `min-vh-100`
+
+### Max Width
+`mw1` through `mw9`, `mw-100`, `mw-none`
+
+### Z-Index
+`z-0`, `z-1`, `z-2`, `z-3`, `z-4`, `z-5`, `z-999`, `z-9999`, `z-max`, `z-inherit`, `z-initial`, `z-unset`
+
+### Floats & Clears
+`fl` (left), `fr` (right), `fn` (none), `cf` (clearfix)
+
+### Lists
+`list` (removes default list styling)
+
+### Box Sizing
+`border-box` (applied globally via `*`)
+
+### Container Type
+`container-size`, `container-inline`, `container-normal`, `.root` — set up nested container query contexts
+
+### Rotations
+`.rotate-45`, `.rotate-90`, `.rotate-135`, `.rotate-180`, `.rotate-225`, `.rotate-270`, `.rotate-315`
+
+### Text Shadow
+`.text-shadow-1` through `.text-shadow-5`
+
+### Hovers & Focus
+Prefix with `hover-` or `focus-` for state variants: `hover-bg-blue`, `hover-black`, `focus-b--blue`
+
+## Usage Examples
+
+### Card with Glass Effect
+```html
+<article class="mw5 center br3 pa3 pa4-s mv3 ba b--black-10 glass3">
+  <div class="tc">
+    <img src="https://picsum.photos/100/100" class="br-100 h4 w4 dib ba b--black-05 pa2 o-90">
+    <h1 class="f3 mb2">Jane Doe</h1>
+    <h2 class="f5 fw4 gray mt0">Designer</h2>
+  </div>
+</article>
+```
+
+### Responsive Navigation (container queries)
+```html
+<nav class="flex flex-column flex-row-s justify-between items-center pa3">
+  <a class="f4 fw6 link black">Logo</a>
+  <div class="flex flex-column flex-row-s">
+    <a class="link black pa2">About</a>
+    <a class="link black pa2">Work</a>
+    <a class="link black pa2">Contact</a>
+  </div>
+</nav>
+```
+
+### Button
+```html
+<a class="f6 link dim br-pill ph3 pv2 mb2 dib white bg-dark-blue">
+  Click Me
+</a>
+```
+
+### Flexbox Grid (container query responsive)
+```html
+<div class="flex flex-wrap">
+  <div class="w-100 w-50-s w-25-l pa2">Column 1</div>
+  <div class="w-100 w-50-s w-25-l pa2">Column 2</div>
+  <div class="w-100 w-50-s w-25-l pa2">Column 3</div>
+  <div class="w-100 w-50-s w-25-l pa2">Column 4</div>
+</div>
+```
+
+### CSS Grid Layout
+```html
+<div class="grid grid-cols-2 grid-cols-4-l gap-3 pa3">
+  <div class="bg-light-gray pa2">Cell 1</div>
+  <div class="bg-light-gray pa2">Cell 2</div>
+  <div class="bg-light-gray pa2">Cell 3</div>
+  <div class="bg-light-gray pa2">Cell 4</div>
+</div>
+```
+
+## Build Commands
+
+```bash
+npm install           # Install dependencies
+npm start             # Build and watch for changes
+npm run build         # Build CSS once
+npm run mutations     # Check for class collisions
+npm run size          # Show brotli size
+```
+
+Requires Node >= 18. No Tachyons tooling required — build pipeline uses `postcss-import` + `cssnano`.
+
+## Source Modules
+
+| Module | Description |
+|--------|-------------|
+| `_normalize.css` | modern-normalize v2 reset (vendored) |
+| `_box-sizing.css` | Border-box sizing |
+| `_variables.css` | CSS custom properties (spacing, colors, scheme) |
+| `_spacing.css` | Margin and padding |
+| `_type-scale.css` | Font sizes |
+| `_typography.css` | Font families (modern-font-stacks), measures |
+| `_widths.css` | Width utilities |
+| `_heights.css` | Height utilities |
+| `_max-widths.css` | Max-width utilities |
+| `_display.css` | Display properties |
+| `_flexbox.css` | Flexbox utilities |
+| `_flex-direction.css` | Flex direction |
+| `_flex-wrap.css` | Flex wrap |
+| `_justify-content.css` | Justify content |
+| `_justify-self.css` | Justify self |
+| `_align-content.css` | Align content |
+| `_align-items.css` | Align items |
+| `_align-self.css` | Align self |
+| `_order.css` | Flex order |
+| `_position.css` | Position utilities |
+| `_coordinates.css` | Top/right/bottom/left |
+| `_floats.css` | Float utilities |
+| `_skins.css` | Text and background colors |
+| `_skins-pseudo.css` | Pseudo-element skins |
+| `_border-colors.css` | Border colors (grey/gray dual spellings) |
+| `_borders.css` | Border utilities |
+| `_border-radius.css` | Border radius |
+| `_border-widths.css` | Border widths |
+| `_border-style.css` | Border styles |
+| `_box-shadow.css` | Box shadows |
+| `_glass.css` | Glass morphism effects |
+| `_gradients.css` | Background gradients |
+| `_filters.css` | CSS filters |
+| `_backdrop-filters.css` | Backdrop filters |
+| `_opacity.css` | Opacity utilities (unified naming) |
+| `_overflow.css` | Overflow utilities |
+| `_visibility.css` | Visibility utilities |
+| `_z-index.css` | Z-index scale |
+| `_container-type.css` | Container query type declarations |
+| `_grid.css` | CSS Grid setup |
+| `_grid-column.css` | Grid column placement |
+| `_grid-row.css` | Grid row placement |
+| `_grid-template-columns.css` | Grid template columns |
+| `_gap.css` | Grid/flex gap |
+| `_gap-column.css` | Column gap |
+| `_gap-row.css` | Row gap |
+| `_hovers.css` | Hover state utilities |
+| `_font-family.css` | Modern font stacks |
+| `_font-weight.css` | Font weights |
+| `_font-style.css` | Italic/normal |
+| `_line-height.css` | Line heights |
+| `_letter-spacing.css` | Letter spacing |
+| `_text-align.css` | Text alignment |
+| `_text-transform.css` | Text transforms |
+| `_text-decoration.css` | Underlines, etc. |
+| `_text-shadow.css` | Text shadows |
+| `_vertical-align.css` | Vertical alignment |
+| `_white-space.css` | White space handling |
+| `_word-break.css` | Word breaking |
+| `_aspect-ratios.css` | Aspect ratio containers |
+| `_images.css` | Image utilities (picsum.photos placeholders) |
+| `_background-size.css` | Background sizing |
+| `_background-position.css` | Background positioning |
+| `_lists.css` | List styling |
+| `_tables.css` | Table utilities |
+| `_forms.css` | Form element resets |
+| `_all.css` | CSS `all` property utilities |
+| `_outlines.css` | Outline utilities |
+| `_rotations.css` | Rotation transforms |
+| `_code.css` | Code formatting |
+| `_links.css` | Link utilities |
+| `_nested.css` | Nested element styling |
+| `_styles.css` | General element styles |
+| `_utilities.css` | Misc utilities |
+| `_negative-margins.css` | Negative margin utilities |
+| `_debug.css` | Layout debugging |
+| `_debug-children.css` | Debug children outlines |
+| `_debug-grid.css` | Grid overlay debugging |
+
+## Key Differences from Tachyons
+
+- **Container queries** (`-s`/`-m`/`-l`) replace `@media` breakpoints (`-ns`/`-m`/`-l`)
+- **modern-normalize v2** replaces normalize.css
+- **Grey + gray** dual spellings on all color classes and numbered border variants
+- **Glass, gradient, filter, backdrop-filter** effects modules
+- **CSS Grid** alongside traditional flexbox/floats
+- **Dark/light scheme** with semantic color variables and automatic OS-aware overrides
+- **PostCSS** build toolchain (`postcss-import` + `cssnano`)
+- **picsum.photos** placeholder images replace defunct Unsplash URLs
+- **modern-font-stacks** font families
+- **No Tachyons tooling required** — self-contained build pipeline
+
+## Repository
+
+GitHub: https://github.com/mrkhdly/tackeons
+License: MIT
+npm: `tackeons`
+
+---
+
+Built on the shoulders of [Tachyons](https://tachyons.io) by [Adam Morse](https://mrmrs.cc) and [John Otander](https://johno.com).

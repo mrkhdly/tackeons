@@ -45,7 +45,21 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 
 ## Changelog
 
-### 0.1.0 (2026-07-19)
+<details open>
+<summary><b>0.2.0</b> (2026-07-19)</summary>
+
+- Default `html` to `container-type: inline-size` for out-of-the-box container-query responsive variants
+- Semantic dark/light color scheme with `prefers-color-scheme` overrides
+- Grey/gray numbered border-color classes (`b--grey-0` through `b--grey-9`, dual spellings)
+- Unified opacity class naming with responsive variants (`-s`/`-m`/`-l`)
+- DRY glass module refactored with custom properties
+- Rewritten README with container-query docs and project differences
+- Added `llms.txt` — structured reference for LLM-assisted development
+
+</details>
+
+<details>
+<summary><b>0.1.0</b> (2026-07-19)</summary>
 
 - Identity rename from tachyons
 - PostCSS build replaces tachyons-cli
@@ -55,6 +69,8 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 - Replaced defunct Unsplash URLs with picsum.photos (+ `--random-image` override)
 - Stripped upstream doc links
 
+</details>
+
 ## AI-assisted development
 
 tackeons is directed by a human maintainer: all ideas, design decisions,
@@ -63,7 +79,17 @@ refactors, build migration, and documentation drafts — is executed by LLM
 coding agents working from written tickets with explicit acceptance
 criteria, reviewed before merge.
 
-## License / credit
+## License & Credits
 
-MIT. Built on the shoulders of [Tachyons](https://tachyons.io) by
-[Adam Morse](https://mrmrs.cc) and [John Otander](https://johno.com).
+MIT.
+
+tackeons is built on and includes code from these projects:
+
+| Project | Role |
+|---------|------|
+| [Tachyons](https://github.com/tachyons-css/tachyons) | Origin framework by [Adam Morse](https://mrmrs.cc) & [John Otander](https://johno.com) |
+| [PostCSS](https://github.com/postcss/postcss) | CSS build pipeline |
+| [postcss-import](https://github.com/postcss/postcss-import) | Module resolution |
+| [cssnano](https://github.com/cssnano/cssnano) | CSS minification |
+| [modern-normalize](https://github.com/sindresorhus/modern-normalize) | Vendored CSS reset |
+| [modern-font-stacks](https://github.com/system-fonts/modern-font-stacks) | System font families |
