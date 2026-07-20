@@ -1,202 +1,36 @@
-.glass1 {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
+.glass1, .glass1-hover:hover, .glass1-focus:focus { --glass-bg: rgba(255, 255, 255, 0);    --glass-blur: 20px; }
+.glass2, .glass2-hover:hover, .glass2-focus:focus { --glass-bg: rgba(255, 255, 255, 0.05); --glass-blur: 20px; }
+.glass3, .glass3-hover:hover, .glass3-focus:focus { --glass-bg: rgba(255, 255, 255, 0.15); --glass-blur: 20px; }
+.glass4, .glass4-hover:hover, .glass4-focus:focus { --glass-bg: rgba(255, 255, 255, 0.25); --glass-blur: 20px; }
+.glass5, .glass5-hover:hover, .glass5-focus:focus { --glass-bg: rgba(255, 255, 255, 0);    --glass-blur: 16px; }
+.glass6, .glass6-hover:hover, .glass6-focus:focus { --glass-bg: rgba(255, 255, 255, 0.05); --glass-blur: 16px; }
+.glass7, .glass7-hover:hover, .glass7-focus:focus { --glass-bg: rgba(255, 255, 255, 0.15); --glass-blur: 16px; }
+.glass8, .glass8-hover:hover, .glass8-focus:focus { --glass-bg: rgba(255, 255, 255, 0.25); --glass-blur: 16px; }
+.glass9, .glass9-hover:hover, .glass9-focus:focus  { --glass-bg: rgba(255, 255, 255, 0.25); }
+.glass10, .glass10-hover:hover, .glass10-focus:focus { --glass-bg: rgba(255, 255, 255, 0); }
 
-.glass2 {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass3 {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass4 {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass5 {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass6 {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass7 {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass8 {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass9 {
-  background: rgba(255, 255, 255, 0.25);
+.glass1, .glass1-hover:hover, .glass1-focus:focus,
+.glass2, .glass2-hover:hover, .glass2-focus:focus,
+.glass3, .glass3-hover:hover, .glass3-focus:focus,
+.glass4, .glass4-hover:hover, .glass4-focus:focus,
+.glass5, .glass5-hover:hover, .glass5-focus:focus,
+.glass6, .glass6-hover:hover, .glass6-focus:focus,
+.glass7, .glass7-hover:hover, .glass7-focus:focus,
+.glass8, .glass8-hover:hover, .glass8-focus:focus,
+.glass9, .glass9-hover:hover, .glass9-focus:focus,
+.glass10, .glass10-hover:hover, .glass10-focus:focus {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--glass-bg);
 }
 
-.glass10 {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass1-hover:hover {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass2-hover:hover {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass3-hover:hover {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass4-hover:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass5-hover:hover {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass6-hover:hover {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass7-hover:hover {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass8-hover:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass9-hover:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass10-hover:hover {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass1-focus:focus {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass2-focus:focus {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass3-focus:focus {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass4-focus:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass5-focus:focus {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass6-focus:focus {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass7-focus:focus {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass8-focus:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass9-focus:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass10-focus:focus {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+.glass1, .glass1-hover:hover, .glass1-focus:focus,
+.glass2, .glass2-hover:hover, .glass2-focus:focus,
+.glass3, .glass3-hover:hover, .glass3-focus:focus,
+.glass4, .glass4-hover:hover, .glass4-focus:focus,
+.glass5, .glass5-hover:hover, .glass5-focus:focus,
+.glass6, .glass6-hover:hover, .glass6-focus:focus,
+.glass7, .glass7-hover:hover, .glass7-focus:focus,
+.glass8, .glass8-hover:hover, .glass8-focus:focus {
+  backdrop-filter: blur(var(--glass-blur));
 }
