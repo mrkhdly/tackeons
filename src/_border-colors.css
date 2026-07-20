@@ -25,3 +25,16 @@
 .b--inherit { border-color: inherit; }
 .b--initial { border-color: initial; }
 .b--unset { border-color: unset; }
+
+.b--grey-0, .b--gray-0 { border-color: var(--gray-0); }
+.b--grey-1, .b--gray-1 { border-color: var(--gray-1); }
+.b--grey-2, .b--gray-2 { border-color: var(--gray-2); }
+.b--grey-3, .b--gray-3 { border-color: var(--gray-3); }
+.b--grey-4, .b--gray-4 { border-color: var(--gray-4); }
+.b--grey-5, .b--gray-5 { border-color: var(--gray-5); }
+.b--grey-6, .b--gray-6 { border-color: var(--gray-6); }
+.b--grey-7, .b--gray-7 { border-color: var(--gray-7); }
+.b--grey-8, .b--gray-8 { border-color: var(--gray-8); }
+.b--grey-9, .b--gray-9 { border-color: var(--gray-9); }
+.b--grey-10, .b--gray-10 { border-color: var(--gray-10); }
+.b--grey-11, .b--gray-11 { border-color: var(--gray-11); }
