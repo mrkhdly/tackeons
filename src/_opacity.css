@@ -18,30 +18,245 @@
 .o1   { opacity: var(--opacity-1,.025);}
 .o0   { opacity: var(--opacity-0,0);   }
 
+.hover-o12:hover,
 .h-o12:hover  { opacity: var(--opacity-12, 1); }
+.hover-o11:hover,
 .h-o11:hover  { opacity: var(--opacity-11,.9); }
+.hover-o10:hover,
 .h-o10:hover  { opacity: var(--opacity-10,.8); }
+.hover-o9:hover,
 .h-o9:hover   { opacity: var(--opacity-9,.7);  }
+.hover-o8:hover,
 .h-o8:hover   { opacity: var(--opacity-8,.6);  }
+.hover-o7:hover,
 .h-o7:hover   { opacity: var(--opacity-7,.5);  }
+.hover-o6:hover,
 .h-o6:hover   { opacity: var(--opacity-6,.4);  }
+.hover-o5:hover,
 .h-o5:hover   { opacity: var(--opacity-5,.3);  }
+.hover-o4:hover,
 .h-o4:hover   { opacity: var(--opacity-4,.2);  }
+.hover-o3:hover,
 .h-o3:hover   { opacity: var(--opacity-3,.1);  }
+.hover-o2:hover,
 .h-o2:hover   { opacity: var(--opacity-2,.05); }
+.hover-o1:hover,
 .h-o1:hover   { opacity: var(--opacity-1,.025);}
+.hover-o0:hover,
 .h-o0:hover   { opacity: var(--opacity-0,0);   }
 
+.focus-o12:focus,
 .f-o12:focus  { opacity: var(--opacity-12, 1); }
+.focus-o11:focus,
 .f-o11:focus  { opacity: var(--opacity-11,.9); }
+.focus-o10:focus,
 .f-o10:focus  { opacity: var(--opacity-10,.8); }
+.focus-o9:focus,
 .f-o9:focus   { opacity: var(--opacity-9,.7);  }
+.focus-o8:focus,
 .f-o8:focus   { opacity: var(--opacity-8,.6);  }
+.focus-o7:focus,
 .f-o7:focus   { opacity: var(--opacity-7,.5);  }
+.focus-o6:focus,
 .f-o6:focus   { opacity: var(--opacity-6,.4);  }
+.focus-o5:focus,
 .f-o5:focus   { opacity: var(--opacity-5,.3);  }
+.focus-o4:focus,
 .f-o4:focus   { opacity: var(--opacity-4,.2);  }
+.focus-o3:focus,
 .f-o3:focus   { opacity: var(--opacity-3,.1);  }
+.focus-o2:focus,
 .f-o2:focus   { opacity: var(--opacity-2,.05); }
+.focus-o1:focus,
 .f-o1:focus   { opacity: var(--opacity-1,.025);}
+.focus-o0:focus,
 .f-o0:focus   { opacity: var(--opacity-0,0);   }
+
+@container (min-width:30em) {
+  .o12-s  { opacity: var(--opacity-12, 1); }
+  .o11-s  { opacity: var(--opacity-11,.9); }
+  .o10-s  { opacity: var(--opacity-10,.8); }
+  .o9-s   { opacity: var(--opacity-9,.7);  }
+  .o8-s   { opacity: var(--opacity-8,.6);  }
+  .o7-s   { opacity: var(--opacity-7,.5);  }
+  .o6-s   { opacity: var(--opacity-6,.4);  }
+  .o5-s   { opacity: var(--opacity-5,.3);  }
+  .o4-s   { opacity: var(--opacity-4,.2);  }
+  .o3-s   { opacity: var(--opacity-3,.1);  }
+  .o2-s   { opacity: var(--opacity-2,.05); }
+  .o1-s   { opacity: var(--opacity-1,.025);}
+  .hover-o12-s:hover,
+  .h-o12-s:hover { opacity: var(--opacity-12, 1); }
+  .hover-o11-s:hover,
+  .h-o11-s:hover { opacity: var(--opacity-11,.9); }
+  .hover-o10-s:hover,
+  .h-o10-s:hover { opacity: var(--opacity-10,.8); }
+  .hover-o9-s:hover,
+  .h-o9-s:hover  { opacity: var(--opacity-9,.7);  }
+  .hover-o8-s:hover,
+  .h-o8-s:hover  { opacity: var(--opacity-8,.6);  }
+  .hover-o7-s:hover,
+  .h-o7-s:hover  { opacity: var(--opacity-7,.5);  }
+  .hover-o6-s:hover,
+  .h-o6-s:hover  { opacity: var(--opacity-6,.4);  }
+  .hover-o5-s:hover,
+  .h-o5-s:hover  { opacity: var(--opacity-5,.3);  }
+  .hover-o4-s:hover,
+  .h-o4-s:hover  { opacity: var(--opacity-4,.2);  }
+  .hover-o3-s:hover,
+  .h-o3-s:hover  { opacity: var(--opacity-3,.1);  }
+  .hover-o2-s:hover,
+  .h-o2-s:hover  { opacity: var(--opacity-2,.05); }
+  .hover-o1-s:hover,
+  .h-o1-s:hover  { opacity: var(--opacity-1,.025);}
+  .focus-o12-s:focus,
+  .f-o12-s:focus { opacity: var(--opacity-12, 1); }
+  .focus-o11-s:focus,
+  .f-o11-s:focus { opacity: var(--opacity-11,.9); }
+  .focus-o10-s:focus,
+  .f-o10-s:focus { opacity: var(--opacity-10,.8); }
+  .focus-o9-s:focus,
+  .f-o9-s:focus  { opacity: var(--opacity-9,.7);  }
+  .focus-o8-s:focus,
+  .f-o8-s:focus  { opacity: var(--opacity-8,.6);  }
+  .focus-o7-s:focus,
+  .f-o7-s:focus  { opacity: var(--opacity-7,.5);  }
+  .focus-o6-s:focus,
+  .f-o6-s:focus  { opacity: var(--opacity-6,.4);  }
+  .focus-o5-s:focus,
+  .f-o5-s:focus  { opacity: var(--opacity-5,.3);  }
+  .focus-o4-s:focus,
+  .f-o4-s:focus  { opacity: var(--opacity-4,.2);  }
+  .focus-o3-s:focus,
+  .f-o3-s:focus  { opacity: var(--opacity-3,.1);  }
+  .focus-o2-s:focus,
+  .f-o2-s:focus  { opacity: var(--opacity-2,.05); }
+  .focus-o1-s:focus,
+  .f-o1-s:focus  { opacity: var(--opacity-1,.025);}
+}
+
+@container (min-width:48em) {
+  .o12-m  { opacity: var(--opacity-12, 1); }
+  .o11-m  { opacity: var(--opacity-11,.9); }
+  .o10-m  { opacity: var(--opacity-10,.8); }
+  .o9-m   { opacity: var(--opacity-9,.7);  }
+  .o8-m   { opacity: var(--opacity-8,.6);  }
+  .o7-m   { opacity: var(--opacity-7,.5);  }
+  .o6-m   { opacity: var(--opacity-6,.4);  }
+  .o5-m   { opacity: var(--opacity-5,.3);  }
+  .o4-m   { opacity: var(--opacity-4,.2);  }
+  .o3-m   { opacity: var(--opacity-3,.1);  }
+  .o2-m   { opacity: var(--opacity-2,.05); }
+  .o1-m   { opacity: var(--opacity-1,.025);}
+  .hover-o12-m:hover,
+  .h-o12-m:hover { opacity: var(--opacity-12, 1); }
+  .hover-o11-m:hover,
+  .h-o11-m:hover { opacity: var(--opacity-11,.9); }
+  .hover-o10-m:hover,
+  .h-o10-m:hover { opacity: var(--opacity-10,.8); }
+  .hover-o9-m:hover,
+  .h-o9-m:hover  { opacity: var(--opacity-9,.7);  }
+  .hover-o8-m:hover,
+  .h-o8-m:hover  { opacity: var(--opacity-8,.6);  }
+  .hover-o7-m:hover,
+  .h-o7-m:hover  { opacity: var(--opacity-7,.5);  }
+  .hover-o6-m:hover,
+  .h-o6-m:hover  { opacity: var(--opacity-6,.4);  }
+  .hover-o5-m:hover,
+  .h-o5-m:hover  { opacity: var(--opacity-5,.3);  }
+  .hover-o4-m:hover,
+  .h-o4-m:hover  { opacity: var(--opacity-4,.2);  }
+  .hover-o3-m:hover,
+  .h-o3-m:hover  { opacity: var(--opacity-3,.1);  }
+  .hover-o2-m:hover,
+  .h-o2-m:hover  { opacity: var(--opacity-2,.05); }
+  .hover-o1-m:hover,
+  .h-o1-m:hover  { opacity: var(--opacity-1,.025);}
+  .focus-o12-m:focus,
+  .f-o12-m:focus { opacity: var(--opacity-12, 1); }
+  .focus-o11-m:focus,
+  .f-o11-m:focus { opacity: var(--opacity-11,.9); }
+  .focus-o10-m:focus,
+  .f-o10-m:focus { opacity: var(--opacity-10,.8); }
+  .focus-o9-m:focus,
+  .f-o9-m:focus  { opacity: var(--opacity-9,.7);  }
+  .focus-o8-m:focus,
+  .f-o8-m:focus  { opacity: var(--opacity-8,.6);  }
+  .focus-o7-m:focus,
+  .f-o7-m:focus  { opacity: var(--opacity-7,.5);  }
+  .focus-o6-m:focus,
+  .f-o6-m:focus  { opacity: var(--opacity-6,.4);  }
+  .focus-o5-m:focus,
+  .f-o5-m:focus  { opacity: var(--opacity-5,.3);  }
+  .focus-o4-m:focus,
+  .f-o4-m:focus  { opacity: var(--opacity-4,.2);  }
+  .focus-o3-m:focus,
+  .f-o3-m:focus  { opacity: var(--opacity-3,.1);  }
+  .focus-o2-m:focus,
+  .f-o2-m:focus  { opacity: var(--opacity-2,.05); }
+  .focus-o1-m:focus,
+  .f-o1-m:focus  { opacity: var(--opacity-1,.025);}
+}
+
+@container (min-width:64em) {
+  .o12-l  { opacity: var(--opacity-12, 1); }
+  .o11-l  { opacity: var(--opacity-11,.9); }
+  .o10-l  { opacity: var(--opacity-10,.8); }
+  .o9-l   { opacity: var(--opacity-9,.7);  }
+  .o8-l   { opacity: var(--opacity-8,.6);  }
+  .o7-l   { opacity: var(--opacity-7,.5);  }
+  .o6-l   { opacity: var(--opacity-6,.4);  }
+  .o5-l   { opacity: var(--opacity-5,.3);  }
+  .o4-l   { opacity: var(--opacity-4,.2);  }
+  .o3-l   { opacity: var(--opacity-3,.1);  }
+  .o2-l   { opacity: var(--opacity-2,.05); }
+  .o1-l   { opacity: var(--opacity-1,.025);}
+  .hover-o12-l:hover,
+  .h-o12-l:hover { opacity: var(--opacity-12, 1); }
+  .hover-o11-l:hover,
+  .h-o11-l:hover { opacity: var(--opacity-11,.9); }
+  .hover-o10-l:hover,
+  .h-o10-l:hover { opacity: var(--opacity-10,.8); }
+  .hover-o9-l:hover,
+  .h-o9-l:hover  { opacity: var(--opacity-9,.7);  }
+  .hover-o8-l:hover,
+  .h-o8-l:hover  { opacity: var(--opacity-8,.6);  }
+  .hover-o7-l:hover,
+  .h-o7-l:hover  { opacity: var(--opacity-7,.5);  }
+  .hover-o6-l:hover,
+  .h-o6-l:hover  { opacity: var(--opacity-6,.4);  }
+  .hover-o5-l:hover,
+  .h-o5-l:hover  { opacity: var(--opacity-5,.3);  }
+  .hover-o4-l:hover,
+  .h-o4-l:hover  { opacity: var(--opacity-4,.2);  }
+  .hover-o3-l:hover,
+  .h-o3-l:hover  { opacity: var(--opacity-3,.1);  }
+  .hover-o2-l:hover,
+  .h-o2-l:hover  { opacity: var(--opacity-2,.05); }
+  .hover-o1-l:hover,
+  .h-o1-l:hover  { opacity: var(--opacity-1,.025);}
+  .focus-o12-l:focus,
+  .f-o12-l:focus { opacity: var(--opacity-12, 1); }
+  .focus-o11-l:focus,
+  .f-o11-l:focus { opacity: var(--opacity-11,.9); }
+  .focus-o10-l:focus,
+  .f-o10-l:focus { opacity: var(--opacity-10,.8); }
+  .focus-o9-l:focus,
+  .f-o9-l:focus  { opacity: var(--opacity-9,.7);  }
+  .focus-o8-l:focus,
+  .f-o8-l:focus  { opacity: var(--opacity-8,.6);  }
+  .focus-o7-l:focus,
+  .f-o7-l:focus  { opacity: var(--opacity-7,.5);  }
+  .focus-o6-l:focus,
+  .f-o6-l:focus  { opacity: var(--opacity-6,.4);  }
+  .focus-o5-l:focus,
+  .f-o5-l:focus  { opacity: var(--opacity-5,.3);  }
+  .focus-o4-l:focus,
+  .f-o4-l:focus  { opacity: var(--opacity-4,.2);  }
+  .focus-o3-l:focus,
+  .f-o3-l:focus  { opacity: var(--opacity-3,.1);  }
+  .focus-o2-l:focus,
+  .f-o2-l:focus  { opacity: var(--opacity-2,.05); }
+  .focus-o1-l:focus,
+  .f-o1-l:focus  { opacity: var(--opacity-1,.025);}
+}
