@@ -1,23 +1,16 @@
 /*
 
    IMAGES
-   Docs: http://tachyons.io/docs/elements/images/
 
 */
 
 img { display: block; max-width: 100%; }
 
-.random-image { 
-  background-image: url(https://source.unsplash.com/random/);
-  background-size: cover;
-}
-
-.random-image-landscape { 
-  background-image: url(https://source.unsplash.com/random/1920x1080);
-  background-size: cover;
-}
-
-.random-image-portrait { 
-  background-image: url(https://source.unsplash.com/random/1080x1920);
+/* Self-hosted random image: set --random-image on the element or an ancestor.
+   No external requests are made by default. */
+.random-image,
+.random-image-landscape,
+.random-image-portrait {
+  background-image: var(--random-image, none);
   background-size: cover;
 }
