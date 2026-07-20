@@ -1,45 +1,68 @@
-# tackeons - A fork of Tachyons v5 beta
-<pre>
-   __             __                        
-  / /_____ ______/ /_____  ____  ____  _____
- / __/ __ `/ ___/ //_/ _ \/ __ \/ __ \/ ___/
-/ /_/ /_/ / /__/ ,< /  __/ /_/ / / / (__  ) 
-\__/\__,_/\___/_/|_|\___/\____/_/ /_/____/
-</pre>
+# tackeons
 
-### Changes
-- Replaced [normalize.css](https://github.com/necolas/normalize.css/) with [modern-normalize.css](https://github.com/sindresorhus/modern-normalize)
-- Removed font-family variables & replaced rules w/utilities ones
-- Added font-family rules for https://github.com/system-fonts/modern-font-stacks
-- Added rules for grey so can use either spelling
+A streamlined, self-contained fork of Tachyons CSS. Functional CSS for humans, modernized.
 
-### Local Setup
+## What is tackeons
 
-Clone the repo from Github and install dependencies through npm.
+tackeons is an independent evolution of Tachyons v5. One-way compatibility is supported: Tachyons → tackeons is the intended migration path (the reverse is not required). The project is self-contained: no upstream Tachyons build tooling, no runtime third-party requests except the opt-in `picsum.photos` placeholder image classes.
+
+## Install / use
 
 ```
-git clone https://github.com/mrkhdly/tackeons.git
-cd tackeons
+npm install tackeons
+```
+
+Link `css/tackeons.min.css` in your project. `css/tachyons.css` is a deprecated re-export shim for existing consumers — do not use it in new projects.
+
+## Differences from upstream Tachyons
+
+- Container-query responsive system (`-s`/`-m`/`-l` suffixes) instead of `@media` breakpoints
+- Grey + gray color spellings (grey is canonical; gray aliases provided for compatibility)
+- Modern font stacks via `modern-font-stacks`
+- Vendored `modern-normalize` v2 reset replacing `normalize.css`
+- Glass, gradient, and filter/backdrop-filter modules
+- PostCSS build toolchain (`postcss-import` + `cssnano`) replacing `tachyons-cli`
+
+## Container query system
+
+Responsive variants `-s`/`-m`/`-l` work out of the box — `html` defaults to `container-type: inline-size`. Opt out on any subtree with `.container-normal`. Scope nested containers with `.container-inline` / `.root`. Breakpoints are fixed at `30em` / `48em` / `64em`.
+
+## Development
+
+```
 npm install
+npm run build    # builds css/tackeons.css + css/tackeons.min.css
+npm run size     # brotli byte count
+npm run mutations  # class-collision lint
+npm start        # watch mode
 ```
 
-#### Dev
+Requires Node >= 18. No Tachyons tooling required.
 
-If you want to just use everything in tachyons/src as a jumping off point and
-edit all the code yourself, you can compile all of your wonderful changes by
-running:
+## Release process
 
-```npm start```
+Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css` + `css/tackeons.min.css` to the release.
 
-This will output both minified and unminified versions of the CSS to the CSS directory and watch the src directory for changes.
-It's aliased to the command:
+## Changelog
 
-```npm run build:watch```
+### 0.1.0 (2026-07-19)
 
-If you'd like to just build the CSS once without watching the src directory, run:
+- Identity rename from tachyons
+- PostCSS build replaces tachyons-cli
+- Fixed 98 broken overlay tint/shadow refs (canonical `.hover-tint-N` family + legacy aliases)
+- Fixed dark-mode `--shadow-color` setter
+- Removed dead modules
+- Replaced defunct Unsplash URLs with picsum.photos (+ `--random-image` override)
+- Stripped upstream doc links
 
-```npm run build```
+## AI-assisted development
 
-If you want to check that a class hasn't been redefined or 'mutated,' there is a linter to check that all of the classes have only been defined once. This can be useful if you are using another library or have written some of your own CSS and want to make sure there are no naming collisions. To do this run the command:
+tackeons is directed by a human maintainer: all ideas, design decisions
+(recorded as ADRs in `tackeons-architecture-kit/`), and final judgment calls
+are the maintainer's. Implementation — code edits, refactors, build migration,
+and documentation drafts — is executed by LLM coding agents working from
+written tickets with explicit acceptance criteria, reviewed before merge.
 
-```npm run mutations```
+## License / credit
+
+MIT. Credit Adam Morse, John Otander, and the Tachyons project as upstream origin.
