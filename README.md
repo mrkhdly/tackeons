@@ -45,6 +45,16 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 
 ## Changelog
 
+### 0.2.0 (2026-07-19)
+
+- Default `html` to `container-type: inline-size` for out-of-the-box container-query responsive variants
+- Semantic dark/light color scheme with `prefers-color-scheme` overrides
+- Grey/gray numbered border-color classes (`b--grey-0` through `b--grey-9`, dual spellings)
+- Unified opacity class naming with responsive variants (`-s`/`-m`/`-l`)
+- DRY glass module refactored with custom properties
+- Rewritten README with container-query docs and project differences
+- Added `llms.txt` — structured reference for LLM-assisted development
+
 ### 0.1.0 (2026-07-19)
 
 - Identity rename from tachyons
