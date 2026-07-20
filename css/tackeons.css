@@ -1,11 +1,11 @@
-/*! tackeons v0.1.0 | https://github.com/mrkhdly/tackeons */
+/*! tackeons v0.2.0 | https://github.com/mrkhdly/tackeons */
 
 /*
  *    TABLE OF CONTENTS
  *
  *    1. External Library Includes
  *       - modern-normalize v2.0.0 https://github.com/sindresorhus/modern-normalize
- *    2. Tachyons Modules
+ *    2. tackeons modules
  *    3. Variables
  *       - Media Queries
  *       - Colors
@@ -648,6 +648,10 @@ summary {
 
   --shadow-color: 0 0 0;
   --shadow-color-invert: 255 255 255;
+  --color-dark: white;
+  --bg-dark: black;
+  --color-light: black;
+  --bg-light: white;
   --shadow-border-width: 1px;
   --shadow-opacity: .25;
 
@@ -682,6 +686,11 @@ summary {
 @media (prefers-color-scheme: dark) {
   :root {
     --shadow-color: 255 255 255;
+    --shadow-color-invert: 0 0 0;
+    --color-dark: black;
+    --bg-dark: white;
+    --color-light: white;
+    --bg-light: black;
   }
 }
 
@@ -769,6 +778,10 @@ summary {
   MDN: https://developer.mozilla.org/en-US/docs/Web/CSS/container-type
 
 */
+
+/* Default: the page root is an inline-size container, so -s/-m/-l responsive
+   variants work out of the box. Opt out on any subtree with .container-normal. */
+html { container-type: inline-size; }
 
 .container-size { container-type: size; }
 .root,
@@ -1216,6 +1229,19 @@ img { display: block; max-width: 100%; }
 .b--inherit { border-color: inherit; }
 .b--initial { border-color: initial; }
 .b--unset { border-color: unset; }
+
+.b--grey-0, .b--gray-0 { border-color: var(--gray-0); }
+.b--grey-1, .b--gray-1 { border-color: var(--gray-1); }
+.b--grey-2, .b--gray-2 { border-color: var(--gray-2); }
+.b--grey-3, .b--gray-3 { border-color: var(--gray-3); }
+.b--grey-4, .b--gray-4 { border-color: var(--gray-4); }
+.b--grey-5, .b--gray-5 { border-color: var(--gray-5); }
+.b--grey-6, .b--gray-6 { border-color: var(--gray-6); }
+.b--grey-7, .b--gray-7 { border-color: var(--gray-7); }
+.b--grey-8, .b--gray-8 { border-color: var(--gray-8); }
+.b--grey-9, .b--gray-9 { border-color: var(--gray-9); }
+.b--grey-10, .b--gray-10 { border-color: var(--gray-10); }
+.b--grey-11, .b--gray-11 { border-color: var(--gray-11); }
 /*
 
    BORDER RADIUS
@@ -1900,207 +1926,41 @@ img { display: block; max-width: 100%; }
     display: inline-grid;
   }
 }
-.glass1 {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
+.glass1, .glass1-hover:hover, .glass1-focus:focus { --glass-bg: rgba(255, 255, 255, 0);    --glass-blur: 20px; }
+.glass2, .glass2-hover:hover, .glass2-focus:focus { --glass-bg: rgba(255, 255, 255, 0.05); --glass-blur: 20px; }
+.glass3, .glass3-hover:hover, .glass3-focus:focus { --glass-bg: rgba(255, 255, 255, 0.15); --glass-blur: 20px; }
+.glass4, .glass4-hover:hover, .glass4-focus:focus { --glass-bg: rgba(255, 255, 255, 0.25); --glass-blur: 20px; }
+.glass5, .glass5-hover:hover, .glass5-focus:focus { --glass-bg: rgba(255, 255, 255, 0);    --glass-blur: 16px; }
+.glass6, .glass6-hover:hover, .glass6-focus:focus { --glass-bg: rgba(255, 255, 255, 0.05); --glass-blur: 16px; }
+.glass7, .glass7-hover:hover, .glass7-focus:focus { --glass-bg: rgba(255, 255, 255, 0.15); --glass-blur: 16px; }
+.glass8, .glass8-hover:hover, .glass8-focus:focus { --glass-bg: rgba(255, 255, 255, 0.25); --glass-blur: 16px; }
+.glass9, .glass9-hover:hover, .glass9-focus:focus  { --glass-bg: rgba(255, 255, 255, 0.25); }
+.glass10, .glass10-hover:hover, .glass10-focus:focus { --glass-bg: rgba(255, 255, 255, 0); }
 
-.glass2 {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass3 {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass4 {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass5 {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass6 {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass7 {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass8 {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass9 {
-  background: rgba(255, 255, 255, 0.25);
+.glass1, .glass1-hover:hover, .glass1-focus:focus,
+.glass2, .glass2-hover:hover, .glass2-focus:focus,
+.glass3, .glass3-hover:hover, .glass3-focus:focus,
+.glass4, .glass4-hover:hover, .glass4-focus:focus,
+.glass5, .glass5-hover:hover, .glass5-focus:focus,
+.glass6, .glass6-hover:hover, .glass6-focus:focus,
+.glass7, .glass7-hover:hover, .glass7-focus:focus,
+.glass8, .glass8-hover:hover, .glass8-focus:focus,
+.glass9, .glass9-hover:hover, .glass9-focus:focus,
+.glass10, .glass10-hover:hover, .glass10-focus:focus {
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(255, 255, 255, 0.15);
+  background: var(--glass-bg);
 }
 
-.glass10 {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass1-hover:hover {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass2-hover:hover {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass3-hover:hover {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass4-hover:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass5-hover:hover {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass6-hover:hover {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass7-hover:hover {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass8-hover:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass9-hover:hover {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass10-hover:hover {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass1-focus:focus {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass2-focus:focus {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass3-focus:focus {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass4-focus:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass5-focus:focus {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass6-focus:focus {
-  background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass7-focus:focus {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass8-focus:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass9-focus:focus {
-  background: rgba(255, 255, 255, 0.25);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.glass10-focus:focus {
-  background: rgba(255, 255, 255, 0);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
+.glass1, .glass1-hover:hover, .glass1-focus:focus,
+.glass2, .glass2-hover:hover, .glass2-focus:focus,
+.glass3, .glass3-hover:hover, .glass3-focus:focus,
+.glass4, .glass4-hover:hover, .glass4-focus:focus,
+.glass5, .glass5-hover:hover, .glass5-focus:focus,
+.glass6, .glass6-hover:hover, .glass6-focus:focus,
+.glass7, .glass7-hover:hover, .glass7-focus:focus,
+.glass8, .glass8-hover:hover, .glass8-focus:focus {
+  backdrop-filter: blur(var(--glass-blur));
 }
 /*
    GAP: GRID AND FLEX SPACING
@@ -4123,33 +3983,248 @@ img { display: block; max-width: 100%; }
 .o1   { opacity: var(--opacity-1,.025);}
 .o0   { opacity: var(--opacity-0,0);   }
 
+.hover-o12:hover,
 .h-o12:hover  { opacity: var(--opacity-12, 1); }
+.hover-o11:hover,
 .h-o11:hover  { opacity: var(--opacity-11,.9); }
+.hover-o10:hover,
 .h-o10:hover  { opacity: var(--opacity-10,.8); }
+.hover-o9:hover,
 .h-o9:hover   { opacity: var(--opacity-9,.7);  }
+.hover-o8:hover,
 .h-o8:hover   { opacity: var(--opacity-8,.6);  }
+.hover-o7:hover,
 .h-o7:hover   { opacity: var(--opacity-7,.5);  }
+.hover-o6:hover,
 .h-o6:hover   { opacity: var(--opacity-6,.4);  }
+.hover-o5:hover,
 .h-o5:hover   { opacity: var(--opacity-5,.3);  }
+.hover-o4:hover,
 .h-o4:hover   { opacity: var(--opacity-4,.2);  }
+.hover-o3:hover,
 .h-o3:hover   { opacity: var(--opacity-3,.1);  }
+.hover-o2:hover,
 .h-o2:hover   { opacity: var(--opacity-2,.05); }
+.hover-o1:hover,
 .h-o1:hover   { opacity: var(--opacity-1,.025);}
+.hover-o0:hover,
 .h-o0:hover   { opacity: var(--opacity-0,0);   }
 
+.focus-o12:focus,
 .f-o12:focus  { opacity: var(--opacity-12, 1); }
+.focus-o11:focus,
 .f-o11:focus  { opacity: var(--opacity-11,.9); }
+.focus-o10:focus,
 .f-o10:focus  { opacity: var(--opacity-10,.8); }
+.focus-o9:focus,
 .f-o9:focus   { opacity: var(--opacity-9,.7);  }
+.focus-o8:focus,
 .f-o8:focus   { opacity: var(--opacity-8,.6);  }
+.focus-o7:focus,
 .f-o7:focus   { opacity: var(--opacity-7,.5);  }
+.focus-o6:focus,
 .f-o6:focus   { opacity: var(--opacity-6,.4);  }
+.focus-o5:focus,
 .f-o5:focus   { opacity: var(--opacity-5,.3);  }
+.focus-o4:focus,
 .f-o4:focus   { opacity: var(--opacity-4,.2);  }
+.focus-o3:focus,
 .f-o3:focus   { opacity: var(--opacity-3,.1);  }
+.focus-o2:focus,
 .f-o2:focus   { opacity: var(--opacity-2,.05); }
+.focus-o1:focus,
 .f-o1:focus   { opacity: var(--opacity-1,.025);}
+.focus-o0:focus,
 .f-o0:focus   { opacity: var(--opacity-0,0);   }
+
+@container (min-width:30em) {
+  .o12-s  { opacity: var(--opacity-12, 1); }
+  .o11-s  { opacity: var(--opacity-11,.9); }
+  .o10-s  { opacity: var(--opacity-10,.8); }
+  .o9-s   { opacity: var(--opacity-9,.7);  }
+  .o8-s   { opacity: var(--opacity-8,.6);  }
+  .o7-s   { opacity: var(--opacity-7,.5);  }
+  .o6-s   { opacity: var(--opacity-6,.4);  }
+  .o5-s   { opacity: var(--opacity-5,.3);  }
+  .o4-s   { opacity: var(--opacity-4,.2);  }
+  .o3-s   { opacity: var(--opacity-3,.1);  }
+  .o2-s   { opacity: var(--opacity-2,.05); }
+  .o1-s   { opacity: var(--opacity-1,.025);}
+  .hover-o12-s:hover,
+  .h-o12-s:hover { opacity: var(--opacity-12, 1); }
+  .hover-o11-s:hover,
+  .h-o11-s:hover { opacity: var(--opacity-11,.9); }
+  .hover-o10-s:hover,
+  .h-o10-s:hover { opacity: var(--opacity-10,.8); }
+  .hover-o9-s:hover,
+  .h-o9-s:hover  { opacity: var(--opacity-9,.7);  }
+  .hover-o8-s:hover,
+  .h-o8-s:hover  { opacity: var(--opacity-8,.6);  }
+  .hover-o7-s:hover,
+  .h-o7-s:hover  { opacity: var(--opacity-7,.5);  }
+  .hover-o6-s:hover,
+  .h-o6-s:hover  { opacity: var(--opacity-6,.4);  }
+  .hover-o5-s:hover,
+  .h-o5-s:hover  { opacity: var(--opacity-5,.3);  }
+  .hover-o4-s:hover,
+  .h-o4-s:hover  { opacity: var(--opacity-4,.2);  }
+  .hover-o3-s:hover,
+  .h-o3-s:hover  { opacity: var(--opacity-3,.1);  }
+  .hover-o2-s:hover,
+  .h-o2-s:hover  { opacity: var(--opacity-2,.05); }
+  .hover-o1-s:hover,
+  .h-o1-s:hover  { opacity: var(--opacity-1,.025);}
+  .focus-o12-s:focus,
+  .f-o12-s:focus { opacity: var(--opacity-12, 1); }
+  .focus-o11-s:focus,
+  .f-o11-s:focus { opacity: var(--opacity-11,.9); }
+  .focus-o10-s:focus,
+  .f-o10-s:focus { opacity: var(--opacity-10,.8); }
+  .focus-o9-s:focus,
+  .f-o9-s:focus  { opacity: var(--opacity-9,.7);  }
+  .focus-o8-s:focus,
+  .f-o8-s:focus  { opacity: var(--opacity-8,.6);  }
+  .focus-o7-s:focus,
+  .f-o7-s:focus  { opacity: var(--opacity-7,.5);  }
+  .focus-o6-s:focus,
+  .f-o6-s:focus  { opacity: var(--opacity-6,.4);  }
+  .focus-o5-s:focus,
+  .f-o5-s:focus  { opacity: var(--opacity-5,.3);  }
+  .focus-o4-s:focus,
+  .f-o4-s:focus  { opacity: var(--opacity-4,.2);  }
+  .focus-o3-s:focus,
+  .f-o3-s:focus  { opacity: var(--opacity-3,.1);  }
+  .focus-o2-s:focus,
+  .f-o2-s:focus  { opacity: var(--opacity-2,.05); }
+  .focus-o1-s:focus,
+  .f-o1-s:focus  { opacity: var(--opacity-1,.025);}
+}
+
+@container (min-width:48em) {
+  .o12-m  { opacity: var(--opacity-12, 1); }
+  .o11-m  { opacity: var(--opacity-11,.9); }
+  .o10-m  { opacity: var(--opacity-10,.8); }
+  .o9-m   { opacity: var(--opacity-9,.7);  }
+  .o8-m   { opacity: var(--opacity-8,.6);  }
+  .o7-m   { opacity: var(--opacity-7,.5);  }
+  .o6-m   { opacity: var(--opacity-6,.4);  }
+  .o5-m   { opacity: var(--opacity-5,.3);  }
+  .o4-m   { opacity: var(--opacity-4,.2);  }
+  .o3-m   { opacity: var(--opacity-3,.1);  }
+  .o2-m   { opacity: var(--opacity-2,.05); }
+  .o1-m   { opacity: var(--opacity-1,.025);}
+  .hover-o12-m:hover,
+  .h-o12-m:hover { opacity: var(--opacity-12, 1); }
+  .hover-o11-m:hover,
+  .h-o11-m:hover { opacity: var(--opacity-11,.9); }
+  .hover-o10-m:hover,
+  .h-o10-m:hover { opacity: var(--opacity-10,.8); }
+  .hover-o9-m:hover,
+  .h-o9-m:hover  { opacity: var(--opacity-9,.7);  }
+  .hover-o8-m:hover,
+  .h-o8-m:hover  { opacity: var(--opacity-8,.6);  }
+  .hover-o7-m:hover,
+  .h-o7-m:hover  { opacity: var(--opacity-7,.5);  }
+  .hover-o6-m:hover,
+  .h-o6-m:hover  { opacity: var(--opacity-6,.4);  }
+  .hover-o5-m:hover,
+  .h-o5-m:hover  { opacity: var(--opacity-5,.3);  }
+  .hover-o4-m:hover,
+  .h-o4-m:hover  { opacity: var(--opacity-4,.2);  }
+  .hover-o3-m:hover,
+  .h-o3-m:hover  { opacity: var(--opacity-3,.1);  }
+  .hover-o2-m:hover,
+  .h-o2-m:hover  { opacity: var(--opacity-2,.05); }
+  .hover-o1-m:hover,
+  .h-o1-m:hover  { opacity: var(--opacity-1,.025);}
+  .focus-o12-m:focus,
+  .f-o12-m:focus { opacity: var(--opacity-12, 1); }
+  .focus-o11-m:focus,
+  .f-o11-m:focus { opacity: var(--opacity-11,.9); }
+  .focus-o10-m:focus,
+  .f-o10-m:focus { opacity: var(--opacity-10,.8); }
+  .focus-o9-m:focus,
+  .f-o9-m:focus  { opacity: var(--opacity-9,.7);  }
+  .focus-o8-m:focus,
+  .f-o8-m:focus  { opacity: var(--opacity-8,.6);  }
+  .focus-o7-m:focus,
+  .f-o7-m:focus  { opacity: var(--opacity-7,.5);  }
+  .focus-o6-m:focus,
+  .f-o6-m:focus  { opacity: var(--opacity-6,.4);  }
+  .focus-o5-m:focus,
+  .f-o5-m:focus  { opacity: var(--opacity-5,.3);  }
+  .focus-o4-m:focus,
+  .f-o4-m:focus  { opacity: var(--opacity-4,.2);  }
+  .focus-o3-m:focus,
+  .f-o3-m:focus  { opacity: var(--opacity-3,.1);  }
+  .focus-o2-m:focus,
+  .f-o2-m:focus  { opacity: var(--opacity-2,.05); }
+  .focus-o1-m:focus,
+  .f-o1-m:focus  { opacity: var(--opacity-1,.025);}
+}
+
+@container (min-width:64em) {
+  .o12-l  { opacity: var(--opacity-12, 1); }
+  .o11-l  { opacity: var(--opacity-11,.9); }
+  .o10-l  { opacity: var(--opacity-10,.8); }
+  .o9-l   { opacity: var(--opacity-9,.7);  }
+  .o8-l   { opacity: var(--opacity-8,.6);  }
+  .o7-l   { opacity: var(--opacity-7,.5);  }
+  .o6-l   { opacity: var(--opacity-6,.4);  }
+  .o5-l   { opacity: var(--opacity-5,.3);  }
+  .o4-l   { opacity: var(--opacity-4,.2);  }
+  .o3-l   { opacity: var(--opacity-3,.1);  }
+  .o2-l   { opacity: var(--opacity-2,.05); }
+  .o1-l   { opacity: var(--opacity-1,.025);}
+  .hover-o12-l:hover,
+  .h-o12-l:hover { opacity: var(--opacity-12, 1); }
+  .hover-o11-l:hover,
+  .h-o11-l:hover { opacity: var(--opacity-11,.9); }
+  .hover-o10-l:hover,
+  .h-o10-l:hover { opacity: var(--opacity-10,.8); }
+  .hover-o9-l:hover,
+  .h-o9-l:hover  { opacity: var(--opacity-9,.7);  }
+  .hover-o8-l:hover,
+  .h-o8-l:hover  { opacity: var(--opacity-8,.6);  }
+  .hover-o7-l:hover,
+  .h-o7-l:hover  { opacity: var(--opacity-7,.5);  }
+  .hover-o6-l:hover,
+  .h-o6-l:hover  { opacity: var(--opacity-6,.4);  }
+  .hover-o5-l:hover,
+  .h-o5-l:hover  { opacity: var(--opacity-5,.3);  }
+  .hover-o4-l:hover,
+  .h-o4-l:hover  { opacity: var(--opacity-4,.2);  }
+  .hover-o3-l:hover,
+  .h-o3-l:hover  { opacity: var(--opacity-3,.1);  }
+  .hover-o2-l:hover,
+  .h-o2-l:hover  { opacity: var(--opacity-2,.05); }
+  .hover-o1-l:hover,
+  .h-o1-l:hover  { opacity: var(--opacity-1,.025);}
+  .focus-o12-l:focus,
+  .f-o12-l:focus { opacity: var(--opacity-12, 1); }
+  .focus-o11-l:focus,
+  .f-o11-l:focus { opacity: var(--opacity-11,.9); }
+  .focus-o10-l:focus,
+  .f-o10-l:focus { opacity: var(--opacity-10,.8); }
+  .focus-o9-l:focus,
+  .f-o9-l:focus  { opacity: var(--opacity-9,.7);  }
+  .focus-o8-l:focus,
+  .f-o8-l:focus  { opacity: var(--opacity-8,.6);  }
+  .focus-o7-l:focus,
+  .f-o7-l:focus  { opacity: var(--opacity-7,.5);  }
+  .focus-o6-l:focus,
+  .f-o6-l:focus  { opacity: var(--opacity-6,.4);  }
+  .focus-o5-l:focus,
+  .f-o5-l:focus  { opacity: var(--opacity-5,.3);  }
+  .focus-o4-l:focus,
+  .f-o4-l:focus  { opacity: var(--opacity-4,.2);  }
+  .focus-o3-l:focus,
+  .f-o3-l:focus  { opacity: var(--opacity-3,.1);  }
+  .focus-o2-l:focus,
+  .f-o2-l:focus  { opacity: var(--opacity-2,.05); }
+  .focus-o1-l:focus,
+  .f-o1-l:focus  { opacity: var(--opacity-1,.025);}
+}
 /*
 
    ROTATIONS
@@ -4597,13 +4672,13 @@ img { display: block; max-width: 100%; }
 .bg-cyan-11 { background-color: var(--cyan-11); }
 
 .dark {
-  background-color: black;
-  color: white;
+  background-color: var(--bg-dark, black);
+  color: var(--color-dark, white);
 }
 
 .light {
-  background-color: white;
-  color: black;
+  background-color: var(--bg-light, white);
+  color: var(--color-light, black);
 }
 
 .blue {
