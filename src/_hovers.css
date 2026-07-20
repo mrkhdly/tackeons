@@ -1,7 +1,6 @@
 /*
 
   HOVER EFFECTS
-  Docs: http://tachyons.io/docs/themes/hovers/
 
     - Dim
     - Glow
@@ -128,7 +127,7 @@
    Add shadow on hover.
 
    Performant box-shadow animation pattern from 
-   http://tobiasahlin.com/blog/how-to-animate-box-shadow/ 
+   Performant box-shadow animation
 
 .shadow-hover {
   cursor: pointer;

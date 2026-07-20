@@ -9,8 +9,7 @@
 
 */
 
-/* 1. Fix for Chrome 44 bug.
- * https://code.google.com/p/chromium/issues/detail?id=506893 */
+/* 1. Fix for Chrome 44 bug. */
 .flex-auto {
   flex: 1 1 auto;
   min-width: 0; /* 1 */
