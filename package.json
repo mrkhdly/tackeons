@@ -24,11 +24,11 @@
   ],
   "license": "MIT",
   "devDependencies": {
-    "brotli-size": "^4.0.0",
-    "copy-files": "^0.1.0",
+    "cssnano": "^7.0.0",
     "immutable-css-cli": "^1.1.1",
-    "tachyons-cli": "^1.3.3",
-    "tachyons-modules": "^1.1.10",
+    "postcss": "^8.4.0",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.0.0",
     "watch": "^1.0.2"
   },
   "contributors": [
@@ -44,10 +44,11 @@
   "scripts": {
     "start": "npm run build:watch",
     "mutations": "immutable-css src/tachyons.css --strict",
-    "build": "npm run build:css && npm run build:minify && brotli-size css/tachyons.min.css",
-    "build:css": "tachyons src/tachyons.css --preserveVariables > css/tachyons.css",
-    "build:minify": "tachyons src/tachyons.css --minify --preserveVariables > css/tachyons.min.css",
-    "build:watch": "watch \"npm run build\" ./src/"
+    "build": "npm run build:css && npm run build:minify",
+    "build:css": "postcss src/tachyons.css -o css/tachyons.css",
+    "build:minify": "postcss src/tachyons.css -o css/tachyons.min.css --env minify",
+    "build:watch": "watch \"npm run build\" ./src/",
+    "size": "node -e \"const z=require('zlib'),f=require('fs');console.log('brotli:',z.brotliCompressSync(f.readFileSync('css/tachyons.min.css')).length,'bytes')\""
   },
   "dependencies": {
     "gzip-size": "^7.0.0"
