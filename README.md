@@ -57,12 +57,13 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 
 ## AI-assisted development
 
-tackeons is directed by a human maintainer: all ideas, design decisions
-(recorded as ADRs in `tackeons-architecture-kit/`), and final judgment calls
-are the maintainer's. Implementation — code edits, refactors, build migration,
-and documentation drafts — is executed by LLM coding agents working from
-written tickets with explicit acceptance criteria, reviewed before merge.
+tackeons is directed by a human maintainer: all ideas, design decisions,
+and final judgment calls are the maintainer's. Implementation — code edits,
+refactors, build migration, and documentation drafts — is executed by LLM
+coding agents working from written tickets with explicit acceptance
+criteria, reviewed before merge.
 
 ## License / credit
 
-MIT. Credit Adam Morse, John Otander, and the Tachyons project as upstream origin.
+MIT. Built on the shoulders of [Tachyons](https://tachyons.io) by
+[Adam Morse](https://mrmrs.cc) and [John Otander](https://johno.com).
