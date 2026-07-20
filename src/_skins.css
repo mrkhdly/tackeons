@@ -402,13 +402,13 @@
 .bg-cyan-11 { background-color: var(--cyan-11); }
 
 .dark {
-  background-color: black;
-  color: white;
+  background-color: var(--bg-dark, black);
+  color: var(--color-dark, white);
 }
 
 .light {
-  background-color: white;
-  color: black;
+  background-color: var(--bg-light, white);
+  color: var(--color-light, black);
 }
 
 .blue {
