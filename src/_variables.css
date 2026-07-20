@@ -352,6 +352,10 @@
 
   --shadow-color: 0 0 0;
   --shadow-color-invert: 255 255 255;
+  --color-dark: white;
+  --bg-dark: black;
+  --color-light: black;
+  --bg-light: white;
   --shadow-border-width: 1px;
   --shadow-opacity: .25;
 
@@ -386,5 +390,10 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --shadow-color: 255 255 255;
+    --shadow-color-invert: 0 0 0;
+    --color-dark: black;
+    --bg-dark: white;
+    --color-light: white;
+    --bg-light: black;
   }
 }
