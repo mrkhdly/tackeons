@@ -1,15 +1,17 @@
 {
-  "name": "tachyons",
-  "version": "5.0.0-beta.0",
-  "description": "Functional CSS for humans",
-  "author": "mrmrs",
-  "style": "css/tachyons.min.css",
-  "main": "css/tachyons.css",
+  "name": "tackeons",
+  "version": "0.1.0",
+  "description": "A streamlined, self-contained fork of Tachyons CSS",
+  "author": "mrkhdly <mark@grey.cx>",
+  "homepage": "https://github.com/mrkhdly/tackeons",
+  "bugs": "https://github.com/mrkhdly/tackeons/issues",
+  "style": "css/tackeons.min.css",
+  "main": "css/tackeons.css",
   "files": [
     "css",
     "src"
   ],
-  "repository": "tachyons-css/tachyons",
+  "repository": "mrkhdly/tackeons",
   "keywords": [
     "UI",
     "UI design",
@@ -43,12 +45,12 @@
   ],
   "scripts": {
     "start": "npm run build:watch",
-    "mutations": "immutable-css src/tachyons.css --strict",
+    "mutations": "immutable-css src/tackeons.css --strict",
     "build": "npm run build:css && npm run build:minify",
-    "build:css": "postcss src/tachyons.css -o css/tachyons.css",
-    "build:minify": "postcss src/tachyons.css -o css/tachyons.min.css --env minify",
+    "build:css": "postcss src/tackeons.css -o css/tackeons.css",
+    "build:minify": "postcss src/tackeons.css -o css/tackeons.min.css --env minify",
     "build:watch": "watch \"npm run build\" ./src/",
-    "size": "node -e \"const z=require('zlib'),f=require('fs');console.log('brotli:',z.brotliCompressSync(f.readFileSync('css/tachyons.min.css')).length,'bytes')\""
+    "size": "node -e \"const z=require('zlib'),f=require('fs');console.log('brotli:',z.brotliCompressSync(f.readFileSync('css/tackeons.min.css')).length,'bytes')\""
   },
   "dependencies": {
     "gzip-size": "^7.0.0"
