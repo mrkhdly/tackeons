@@ -45,7 +45,8 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 
 ## Changelog
 
-### 0.2.0 (2026-07-19)
+<details open>
+<summary><b>0.2.0</b> (2026-07-19)</summary>
 
 - Default `html` to `container-type: inline-size` for out-of-the-box container-query responsive variants
 - Semantic dark/light color scheme with `prefers-color-scheme` overrides
@@ -55,7 +56,10 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 - Rewritten README with container-query docs and project differences
 - Added `llms.txt` — structured reference for LLM-assisted development
 
-### 0.1.0 (2026-07-19)
+</details>
+
+<details>
+<summary><b>0.1.0</b> (2026-07-19)</summary>
 
 - Identity rename from tachyons
 - PostCSS build replaces tachyons-cli
@@ -64,6 +68,8 @@ Tag `vX.Y.Z` — a GitHub Actions workflow builds and attaches `css/tackeons.css
 - Removed dead modules
 - Replaced defunct Unsplash URLs with picsum.photos (+ `--random-image` override)
 - Stripped upstream doc links
+
+</details>
 
 ## AI-assisted development
 
