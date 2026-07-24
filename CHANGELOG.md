@@ -1,18 +1,19 @@
 # Changelog
 
-## [Unreleased]
+## [Unreleased] - 2026-07-24
 
 ### Added
 
-- CI workflow (`build` + `mutations` lint + `size` check on push to dev/main and PRs)
+- CI workflow (build + mutations + size on push to dev/main & PRs)
 - Release workflow (on tag push: builds CSS, generates release notes, attaches artifacts)
 - Migration guide for Tachyons v4 → v5 → tackeons in README
 
 ### Changed
 
-- Scope README compatibility wording to Tachyons v5 beta (not v4.x)
+- Tightened tone across README, CHANGELOG, & release notes (no em dashes, casual voice)
+- Scoped README compatibility to v5 beta (not v4.x)
 
-## [0.2.1] — 2026-07-20
+## [0.2.1] - 2026-07-20
 
 ### Fixed
 
@@ -21,11 +22,11 @@
 
 ### Changed
 
-- Make changelog versions collapsible in README (moved to separate file)
+- Move changelog to separate CHANGELOG.md
 - Add credits section linking dependency repos
-- Fix AI disclaimer and link credits properly
+- Fix AI disclaimer & link credits properly
 
-## [0.2.0] — 2026-07-19
+## [0.2.0] - 2026-07-19
 
 ### Added
 
@@ -33,14 +34,14 @@
 - Semantic dark/light color scheme with `prefers-color-scheme` overrides
 - Grey/gray numbered border-color classes (`b--grey-0` through `b--grey-9`, dual spellings)
 - Unified opacity class naming with responsive variants (`-s`/`-m`/`-l`)
-- `llms.txt` — structured reference for LLM-assisted development
+- `llms.txt`, structured LLM reference
 
 ### Changed
 
 - DRY glass module refactored with custom properties
-- Rewritten README with container-query docs and project differences
+- Rewritten README with container-query docs & project differences
 
-## [0.1.0] — 2026-07-19
+## [0.1.0] - 2026-07-19
 
 ### Added
 
