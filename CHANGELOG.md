@@ -1,5 +1,17 @@
 # Changelog
 
+## [Unreleased]
+
+### Added
+
+- CI workflow (`build` + `mutations` lint + `size` check on push to dev/main and PRs)
+- Release workflow (on tag push: builds CSS, generates release notes, attaches artifacts)
+- Migration guide for Tachyons v4 → v5 → tackeons in README
+
+### Changed
+
+- Scope README compatibility wording to Tachyons v5 beta (not v4.x)
+
 ## [0.2.1] — 2026-07-20
 
 ### Fixed
