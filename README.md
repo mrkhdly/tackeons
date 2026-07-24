@@ -21,6 +21,8 @@ npm install tackeons
 Link `css/tackeons.min.css` in your project. `css/tachyons.css` is a deprecated re-export
 shim for existing consumers. Don't use it in new projects.
 
+[Latest release →](https://github.com/mrkhdly/tackeons/releases/latest)
+
 ## Differences from upstream Tachyons
 
 - Container-query responsive system (`-s`/`-m`/`-l` suffixes) instead of `@media` breakpoints
