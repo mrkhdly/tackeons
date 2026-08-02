@@ -14,14 +14,19 @@ opt-in `picsum.photos` placeholders. Built for my own projects, but open for any
 
 ## Install / use
 
-```
-npm install tackeons
+No npm package — intentionally not on npm registry (streamlined distribution).
+
+Download `css/tackeons.min.css` from [Latest release](https://github.com/mrkhdly/tackeons/releases/latest) or clone the repo, then link it:
+
+```html
+<link rel="stylesheet" href="/path/to/tackeons.min.css">
 ```
 
-Link `css/tackeons.min.css` in your project. `css/tachyons.css` is a deprecated re-export
-shim for existing consumers. Don't use it in new projects.
+`css/tachyons.css` is a deprecated re-export shim for existing consumers. Don't use it in new projects.
 
 [Latest release →](https://github.com/mrkhdly/tackeons/releases/latest)
+
+For developing tackeons itself, `npm install` installs build tooling only (PostCSS, etc.) — see Development below. No `npm publish` intended.
 
 ## Differences from upstream Tachyons
 

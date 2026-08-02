@@ -1,7 +1,8 @@
 {
   "name": "tackeons",
+  "private": true,
   "version": "0.2.1",
-  "description": "A streamlined, self-contained fork of Tachyons CSS",
+  "description": "A streamlined, self-contained fork of Tachyons CSS (not published to npm — GitHub Releases only)",
   "author": "mrkhdly <mark@grey.cx>",
   "homepage": "https://github.com/mrkhdly/tackeons",
   "bugs": "https://github.com/mrkhdly/tackeons/issues",
@@ -26,6 +27,8 @@
   ],
   "license": "MIT",
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^8.0.0",
+    "css-declaration-sorter": "^7.3.0",
     "cssnano": "^7.0.0",
     "immutable-css-cli": "^1.1.1",
     "postcss": "^8.4.0",
@@ -50,7 +53,10 @@
     "build:css": "postcss src/tackeons.css -o css/tackeons.css",
     "build:minify": "postcss src/tackeons.css -o css/tackeons.min.css --env minify",
     "build:watch": "watch \"npm run build\" ./src/",
-    "size": "node -e \"const z=require('zlib'),f=require('fs');console.log('brotli:',z.brotliCompressSync(f.readFileSync('css/tackeons.min.css')).length,'bytes')\""
+    "size": "node -e \"const z=require('zlib'),f=require('fs');console.log('brotli:',z.brotliCompressSync(f.readFileSync('css/tackeons.min.css')).length,'bytes')\"",
+    "metrics": "node scripts/metrics.js",
+    "build:docs": "mkdir -p docs/css && cp css/tackeons.min.css docs/css/tackeons.min.css && echo 'copied css to docs/css/'",
+    "build:docs:purge": "postcss docs/css/tackeons.min.css -o docs/_site/css/tackeons.min.css --config docs/postcss.config.cjs --env production"
   },
   "dependencies": {
     "gzip-size": "^7.0.0"

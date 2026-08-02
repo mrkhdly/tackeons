@@ -1,0 +1,35 @@
+title: tackeons
+description: "Functional CSS for humans, modernized — streamlined Tachyons fork"
+baseurl: ""
+url: "https://tackeons.grey.cx"
+
+company: Tackeons
+location: CSS
+start-year: 2017
+
+markdown: kramdown
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+include:
+  - _pages
+
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock
+  - node_modules/
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+  - README.md
+  - css
+  - package.json
+  - package-lock.json
+  - postcss.config.cjs
+  - node_modules/

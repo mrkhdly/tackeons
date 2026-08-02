@@ -1,0 +1,26 @@
+{% comment %}
+  Recursive nav list — supports nested entries like no-style-please
+  Usage: {% include nav-list.html entries=site.data.nav-links %}
+  Data shape: array of {text, href, entries: [sub-items]}
+{% endcomment %}
+<ul>
+  {% for item in include.entries %}
+    <li>
+      <a href="{{ item.href | relative_url }}">{{ item.text }}</a>
+      {% if item.entries %}
+        {% include nav-list.html entries=item.entries %}
+      {% endif %}
+      {% if item.post_list %}
+        <ul>
+          {% assign limit = item.post_list.limit | default: 5 %}
+          {% for post in site.posts limit:limit %}
+            <li><a href="{{ post.url | relative_url }}">{{ post.title }}</a></li>
+          {% endfor %}
+          {% if item.post_list.show_more and item.post_list.show_more_url %}
+            <li><a href="{{ item.post_list.show_more_url | relative_url }}">{{ item.post_list.show_more_text | default: "more..." }}</a></li>
+          {% endif %}
+        </ul>
+      {% endif %}
+    </li>
+  {% endfor %}
+</ul>
