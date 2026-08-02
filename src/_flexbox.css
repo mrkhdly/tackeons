@@ -25,8 +25,6 @@
 .flex-shrink-1 { flex-shrink: 1; }
 
 @container (min-width:30em) {
-  .flex-s { display: flex; }
-  .inline-flex-s { display: inline-flex; }
   .flex-auto-s {
     flex: 1 1 auto;
     min-width: 0; /* 1 */
@@ -41,8 +39,6 @@
   .flex-shrink-1-s { flex-shrink: 1; }
 }
 @container (min-width:48em) {
-  .flex-m { display: flex; }
-  .inline-flex-m { display: inline-flex; }
   .flex-auto-m {
     flex: 1 1 auto;
     min-width: 0; /* 1 */
@@ -58,8 +54,6 @@
 }
 
 @container (min-width:64em) {
-  .flex-l { display: flex; }
-  .inline-flex-l { display: inline-flex; }
   .flex-auto-l {
     flex: 1 1 auto;
     min-width: 0; /* 1 */
