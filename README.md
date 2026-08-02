@@ -31,9 +31,9 @@ For developing tackeons itself, `npm install` installs build tooling only (PostC
 ## Differences from upstream Tachyons
 
 - Container-query responsive system (`-s`/`-m`/`-l` suffixes) instead of `@media` breakpoints
-- Grey & gray color spellings (grey is canonical; gray aliases provided for compatibility)
-- Modern font stacks via `modern-font-stacks`
-- Vendored `modern-normalize` v2 reset replacing `normalize.css`
+- Grey & gray color spellings (grey canonical, gray alias permanent for US English — Oxford rationale, ~100-150B brotli overhead)
+- Modern font stacks via `modern-font-stacks` (15 stacks, in sync 2026-08-01)
+- Vendored `modern-normalize` v3.0.1 reset replacing `normalize.css` (v2→v3 removes Firefox legacy hr/abbr/-moz-)
 - Glass, gradient, & filter/backdrop-filter modules
 - PostCSS build toolchain (`postcss-import` + `cssnano`) replacing `tachyons-cli`
 
@@ -76,11 +76,16 @@ the following breaking changes apply on top of tackeons' own differences.
 all removed. Use `.f-heading`, `.f-body`, `.f-mono` (configurable via CSS custom
 properties).
 
-### Spacing: shorthand classes removed
+### Spacing: shorthand renamed (v4 → v5)
 
-`ma0`–`ma7`, `mv0`–`mv7`, `mh0`–`mh7`, `pa0`–`pa7`, `pv0`–`pv7`, `ph0`–`ph7`
-are all removed. Use individual directional classes (`mt4 mb4 ml4 mr4` instead
-of `ma4`).
+| v4.x | v5 beta / tackeons | Why |
+|---|---|---|
+| `pa0`–`pa7` | `p0`–`p9` | Shorter: `pa`→`p` (a=all redundant, `padding` already means all). Tailwind `p-*` alignment, saves gzip. |
+| `ma0`–`ma7` | `m0`–`m9` | Same: `m` not `ma`. |
+| `ph`, `pv` | `px`, `py` | `h/v`→`x/y` axis naming. Industry standard: x=horizontal (left/right), y=vertical (top/bottom). Tailwind, Bootstrap 5, `gap-x`/`gap-y` use x/y. Clearer than h (height? horizontal?) / v. |
+| `mh`, `mv` | `mx`, `my` | Same x/y migration for margins. |
+
+Scale expanded 0–7→0–9. Replace: `pa4`→`p4`, `ph3`→`px3`, `pv2`→`py2`, `ma2`→`m2`, `mh2`→`mx2`, `mv2`→`my2`. See PR #455 "paX/maX → pX/mX" and PR #705 "Moved to x,y syntax instead of h,v" — https://github.com/tachyons-css/tachyons/pull/455 / #705.
 
 ### Table display classes removed
 
@@ -106,10 +111,10 @@ properties.
 | Change | Detail |
 |---|---|
 | Build system | `tachyons-cli` → PostCSS (`postcss-import` + `cssnano`) |
-| Reset | `normalize.css` → `modern-normalize` v2 |
-| Grey/gray | Dual spellings; `grey` canonical, `gray` as alias |
+| Reset | `normalize.css` → `modern-normalize` v3.0.1 (v2→v3 removes Firefox legacy) |
+| Grey/gray | Dual spellings permanent; `grey` canonical, `gray` alias (Oxford rationale, ~100-150B) |
 | New modules | Glass, gradient, filter, backdrop-filter |
-| Font stacks | `modern-font-stacks` (Inter, Inconsolata) |
+| Font stacks | `modern-font-stacks` (15 stacks, Inter/Roboto, in sync 2026-08-01) |
 
 ## Development
 

@@ -37,11 +37,11 @@ No npm package — intentionally streamlined, not on npm registry.
 ## Differences from upstream Tachyons
 
 - Container-query responsive system (`-s`/`-m`/`-l` suffixes) instead of `@media` breakpoints
-- Grey & gray color spellings (grey is canonical, gray aliases permanent for US English — Oxford English rationale)
-- Modern font stacks via `modern-font-stacks`
-- Vendored `modern-normalize` v2 reset replacing `normalize.css`
-- Glass, gradient, & filter/backdrop-filter modules
-- PostCSS build toolchain (`postcss-import` + `cssnano`) replacing `tachyons-cli`
+ - Grey & gray color spellings (grey is canonical, gray aliases permanent for US English — Oxford English rationale)
+ - Modern font stacks via `modern-font-stacks` (15 stacks, in sync 2026-08-01)
+ - Vendored `modern-normalize` v3.0.1 reset replacing `normalize.css` (upgraded from v2.0.0 → v3.0.1, removes Firefox legacy hr/abbr/-moz-)
+ - Glass, gradient, & filter/backdrop-filter modules
+ - PostCSS build toolchain (`postcss-import` + `cssnano`) replacing `tachyons-cli`
 
 ## Container query system
 
