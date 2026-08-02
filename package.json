@@ -55,7 +55,7 @@
     "build:watch": "watch \"npm run build\" ./src/",
     "size": "node -e \"const z=require('zlib'),f=require('fs');console.log('brotli:',z.brotliCompressSync(f.readFileSync('css/tackeons.min.css')).length,'bytes')\"",
     "metrics": "node scripts/metrics.js",
-    "build:docs": "mkdir -p docs/css && cp css/tackeons.min.css docs/css/tackeons.min.css && echo 'copied css to docs/css/'",
+    "build:docs": "mkdir -p docs/css docs/dist && cp css/tackeons.min.css docs/css/tackeons.min.css && cp css/tackeons.min.css docs/dist/tackeons.min.css && cp css/tackeons.css docs/dist/tackeons.css && echo 'copied css to docs/css/ + docs/dist/ (full for own-domain CDN)'",
     "build:docs:purge": "postcss docs/css/tackeons.min.css -o docs/_site/css/tackeons.min.css --config docs/postcss.config.cjs --env production"
   },
   "dependencies": {

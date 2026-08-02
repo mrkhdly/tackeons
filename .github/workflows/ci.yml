@@ -24,4 +24,15 @@ jobs:
       - run: npm run mutations
         continue-on-error: true
 
+      - run: npm run metrics
+
       - run: npm run size
+
+      - run: npm run build:docs
+        # copy full css to docs/ for own-domain CDN /dist/
+
+      - name: Verify docs scaffold
+        run: |
+          ls -lh docs/_config.yml docs/index.md docs/_pages/
+          ls -lh docs/dist/ css/tackeons.min.css
+          echo "docs scaffold exists, metrics PASS"
