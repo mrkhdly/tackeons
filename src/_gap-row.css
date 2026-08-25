@@ -14,34 +14,34 @@
 
 
 .gr0 { row-gap: var(--spacing-0, 0); }
-.gr1 { row-gap: var(--spacing-1, 4px); }
-.gr2 { row-gap: var(--spacing-2, 8px); }
-.gr3 { row-gap: var(--spacing-3, 16px); }
-.gr4 { row-gap: var(--spacing-4, 32px); }
-.gr5 { row-gap: var(--spacing-5, 64px); }
-.gr6 { row-gap: var(--spacing-6, 128px); }
-.gr7 { row-gap: var(--spacing-7, 256px); }
+.gr1 { row-gap: var(--spacing-1, 2px); }
+.gr2 { row-gap: var(--spacing-2, 4px); }
+.gr3 { row-gap: var(--spacing-3, 8px); }
+.gr4 { row-gap: var(--spacing-4, 16px); }
+.gr5 { row-gap: var(--spacing-5, 32px); }
+.gr6 { row-gap: var(--spacing-6, 64px); }
+.gr7 { row-gap: var(--spacing-7, 128px); }
 
 @container (min-width:30em) {
   .gr0-s { row-gap: var(--spacing-0, 0); }
-  .gr1-s { row-gap: var(--spacing-1, 4px); }
-  .gr2-s { row-gap: var(--spacing-2, 8px); }
-  .gr3-s { row-gap: var(--spacing-3, 16px); }
-  .gr4-s { row-gap: var(--spacing-4, 32px); }
-  .gr5-s { row-gap: var(--spacing-5, 64px); }
-  .gr6-s { row-gap: var(--spacing-6, 128px); }
-  .gr7-s { row-gap: var(--spacing-7, 256px); }
+  .gr1-s { row-gap: var(--spacing-1, 2px); }
+  .gr2-s { row-gap: var(--spacing-2, 4px); }
+  .gr3-s { row-gap: var(--spacing-3, 8px); }
+  .gr4-s { row-gap: var(--spacing-4, 16px); }
+  .gr5-s { row-gap: var(--spacing-5, 32px); }
+  .gr6-s { row-gap: var(--spacing-6, 64px); }
+  .gr7-s { row-gap: var(--spacing-7, 128px); }
 }
 
 @container (min-width:48em) {
   .gr0-m { row-gap: var(--spacing-0, 0); }
-  .gr1-m { row-gap: var(--spacing-1, 4px); }
-  .gr2-m { row-gap: var(--spacing-2, 8px); }
-  .gr3-m { row-gap: var(--spacing-3, 16px); }
-  .gr4-m { row-gap: var(--spacing-4, 32px); }
-  .gr5-m { row-gap: var(--spacing-5, 64px); }
-  .gr6-m { row-gap: var(--spacing-6, 128px); }
-  .gr7-m { row-gap: var(--spacing-7, 256px); }
+  .gr1-m { row-gap: var(--spacing-1, 2px); }
+  .gr2-m { row-gap: var(--spacing-2, 4px); }
+  .gr3-m { row-gap: var(--spacing-3, 8px); }
+  .gr4-m { row-gap: var(--spacing-4, 16px); }
+  .gr5-m { row-gap: var(--spacing-5, 32px); }
+  .gr6-m { row-gap: var(--spacing-6, 64px); }
+  .gr7-m { row-gap: var(--spacing-7, 128px); }
 }
 
 
