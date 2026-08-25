@@ -1,7 +1,7 @@
 {
   "name": "tackeons",
   "private": true,
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "A streamlined, self-contained fork of Tachyons CSS (not published to npm — GitHub Releases only)",
   "author": "mrkhdly <mark@grey.cx>",
   "homepage": "https://github.com/mrkhdly/tackeons",

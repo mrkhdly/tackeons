@@ -1,15 +1,22 @@
 # Changelog
 
-## [Unreleased] - 2026-07-24
+## [0.2.2] - 2026-08-25
+
+### Fixed
+
+- Correct spacing scale fallbacks across all modules: `var(--spacing-N)` fallbacks were one scale-step too high in `_spacing.css` (`px1`, `mb1`, `my1`, `mx1-s`, `mr1-m`, `ml1-l`) and all `_gap*` modules (63 declarations). Only affects rendering when custom properties are undefined; built output brotli 15,442 bytes
 
 ### Added
 
+- Metrics regression gate: `scripts/baseline.json` is the size source of truth, `npm run metrics` fails on >5% brotli growth, `npm run metrics:update` refreshes for intentional changes
 - CI workflow (build + mutations + size on push to dev/main & PRs)
 - Release workflow (on tag push: builds CSS, generates release notes, attaches artifacts)
 - Migration guide for Tachyons v4 → v5 → tackeons in README
+- Docs site scaffold at `docs/` (Jekyll, tackeons.grey.cx) with metric suite integration
 
 ### Changed
 
+- Vendored modern-normalize upgraded v2.0.0 → v3.0.1 (raw −1KB, gzip −230B)
 - Tightened tone across README, CHANGELOG, & release notes (no em dashes, casual voice)
 - Scoped README compatibility to v5 beta (not v4.x)
 
