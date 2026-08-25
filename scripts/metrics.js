@@ -113,18 +113,19 @@ if (fs.existsSync(cssPath) && fs.existsSync(minPath)) {
     }
   }
   const baseMin = baseline && baseline.artifacts['css/tackeons.min.css'];
-  if (baseMin && typeof baseMin.brotli === 'number') {
-    const growth = ((minSz.brotli - baseMin.brotli) / baseMin.brotli) * 100;
+  if (UPDATE_BASELINE && baseMin && typeof baseMin.brotli === 'number' && baseMin.brotli !== minSz.brotli) {
+    fs.writeFileSync(baselinePath, JSON.stringify(currentBaseline(), null, 2) + '\n');
+    report.push(`- **Baseline updated** (--update-baseline): ${fmt(baseMin.brotli)} → ${fmt(minSz.brotli)} — commit scripts/baseline.json with your change`);
+    baseline = loadBaseline();
+  }
+  const cur = baseline && baseline.artifacts['css/tackeons.min.css'];
+  if (cur && typeof cur.brotli === 'number') {
+    const growth = ((minSz.brotli - cur.brotli) / cur.brotli) * 100;
     const ok = growth <= BASELINE_GATE_PCT;
-    report.push(`- Brotli gate: ${fmt(minSz.brotli)} vs baseline ${fmt(baseMin.brotli)} (${growth >= 0 ? '+' : ''}${growth.toFixed(2)}%, limit +${BASELINE_GATE_PCT}%) ${ok ? 'PASS' : '**FAIL**'}`);
-    report.push(`- Raw gate: ${fmt(minSz.raw)} vs baseline ${fmt(baseMin.raw)} (${(((minSz.raw - baseMin.raw) / baseMin.raw) * 100).toFixed(2)}%)`);
+    report.push(`- Brotli gate: ${fmt(minSz.brotli)} vs baseline ${fmt(cur.brotli)} (${growth >= 0 ? '+' : ''}${growth.toFixed(2)}%, limit +${BASELINE_GATE_PCT}%) ${ok ? 'PASS' : '**FAIL**'}`);
+    report.push(`- Raw gate: ${fmt(minSz.raw)} vs baseline ${fmt(cur.raw)} (${(((minSz.raw - cur.raw) / cur.raw) * 100).toFixed(2)}%)`);
     if (!ok) {
-      if (UPDATE_BASELINE) {
-        fs.writeFileSync(baselinePath, JSON.stringify(currentBaseline(), null, 2) + '\n');
-        report.push(`- **Baseline updated** (--update-baseline): ${fmt(baseMin.brotli)} → ${fmt(minSz.brotli)} — commit scripts/baseline.json with your change`);
-      } else {
-        failures.push(`Brotli size grew +${growth.toFixed(1)}% over scripts/baseline.json (${baseMin.brotli} → ${minSz.brotli}). If intentional, run \`npm run metrics:update\` and commit baseline.json together with the change.`);
-      }
+      failures.push(`Brotli size grew +${growth.toFixed(1)}% over scripts/baseline.json (${cur.brotli} → ${minSz.brotli}). If intentional, run \`npm run metrics:update\` and commit baseline.json together with the change.`);
     }
   }
 } else {
