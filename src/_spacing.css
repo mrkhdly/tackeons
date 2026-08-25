@@ -136,8 +136,8 @@
   padding-right: var(--spacing-0, 0);
 }
 .px1 {
-  padding-left: var(--spacing-1, 4px);
-  padding-right: var(--spacing-1, 4px);
+  padding-left: var(--spacing-1, 2px);
+  padding-right: var(--spacing-1, 2px);
 }
 .px2 {
   padding-left: var(--spacing-2, 4px);
@@ -206,7 +206,7 @@
 .mr9 { margin-right: var(--spacing-9, 512px); }
 
 .mb0 { margin-bottom: var(--spacing-0, 0); }
-.mb1 { margin-bottom: var(--spacing-1, 4px); }
+.mb1 { margin-bottom: var(--spacing-1, 2px); }
 .mb2 { margin-bottom: var(--spacing-2, 4px); }
 .mb3 { margin-bottom: var(--spacing-3, 8px); }
 .mb4 { margin-bottom: var(--spacing-4, 16px); }
@@ -232,8 +232,8 @@
   margin-bottom: var(--spacing-0, 0);
 }
 .my1  {
-  margin-top: var(--spacing-1, 4px);
-  margin-bottom: var(--spacing-1, 4px);
+  margin-top: var(--spacing-1, 2px);
+  margin-bottom: var(--spacing-1, 2px);
 }
 .my2  {
   margin-top: var(--spacing-2, 4px);
@@ -548,8 +548,8 @@
     margin-right: var(--spacing-0, 0);
   }
   .mx1-s   {
-    margin-left: var(--spacing-1, 4px);
-    margin-right: var(--spacing-1, 4px);
+    margin-left: var(--spacing-1, 2px);
+    margin-right: var(--spacing-1, 2px);
   }
   .mx2-s   {
     margin-left: var(--spacing-2, 4px);
@@ -747,7 +747,7 @@
   .ml9-m { margin-left: var(--spacing-9, 512px); }
 
   .mr0-m  {  margin-right: var(--spacing-0, 0); }
-  .mr1-m {  margin-right: var(--spacing-1, 4px); }
+  .mr1-m {  margin-right: var(--spacing-1, 2px); }
   .mr2-m {  margin-right: var(--spacing-2, 4px); }
   .mr3-m  {  margin-right: var(--spacing-3, 8px); }
   .mr4-m  {  margin-right: var(--spacing-4, 16px); }
@@ -1013,7 +1013,7 @@
   .m9-l { margin: var(--spacing-9, 512px); }
 
   .ml0-l  {  margin-left: var(--spacing-0, 0); }
-  .ml1-l {  margin-left: var(--spacing-3, 2px); }
+  .ml1-l {  margin-left: var(--spacing-1, 2px); }
   .ml2-l {  margin-left: var(--spacing-2, 4px); }
   .ml3-l  {  margin-left: var(--spacing-3, 8px); }
   .ml4-l  {  margin-left: var(--spacing-4, 16px); }
