@@ -1,0 +1,8 @@
+<footer>
+  <nav>
+    {% for item in site.data.nav-links %}
+      <a href="{{ item.href }}">{{ item.text }}</a>{% unless forloop.last %} · {% endunless %}
+    {% endfor %}
+  </nav>
+  <small>Built with <a href="https://github.com/mrkhdly/tackeons">Tackeons</a> · MIT · <a href="https://github.com/mrkhdly/tackeons/releases/latest">Latest release</a></small>
+</footer>

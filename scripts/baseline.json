@@ -1,0 +1,16 @@
+{
+  "updated": "2026-08-25T17:03:34.831Z",
+  "commit": "add9208",
+  "artifacts": {
+    "css/tackeons.min.css": {
+      "raw": 193175,
+      "gzip": 28398,
+      "brotli": 15442
+    },
+    "css/tackeons.css": {
+      "raw": 255944,
+      "gzip": 38266,
+      "brotli": 22605
+    }
+  }
+}

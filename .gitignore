@@ -2,3 +2,5 @@ node_modules
 npm-debug.log
 .DS_STORE
 *.swp
+metrics-report.md
+docs/_site/

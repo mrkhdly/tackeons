@@ -1,0 +1,23 @@
+- text: Home
+  href: /
+- text: Docs
+  href: /docs/
+  entries:
+    - text: Getting Started
+      href: /docs/getting-started/
+    - text: Container Queries
+      href: /docs/container-queries/
+    - text: Colors
+      href: /docs/colors/
+    - text: Differences from Tachyons
+      href: /docs/differences/
+    - text: Variables
+      href: /docs/variables/
+    - text: Table of Styles
+      href: /docs/table-of-styles/
+    - text: Table of Properties
+      href: /docs/table-of-properties/
+- text: GitHub
+  href: https://github.com/mrkhdly/tackeons
+- text: Releases
+  href: https://github.com/mrkhdly/tackeons/releases/latest

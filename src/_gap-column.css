@@ -14,34 +14,34 @@
 
 
 .gc0 { column-gap: var(--spacing-0, 0); }
-.gc1 { column-gap: var(--spacing-1, 4px); }
-.gc2 { column-gap: var(--spacing-2, 8px); }
-.gc3 { column-gap: var(--spacing-3, 16px); }
-.gc4 { column-gap: var(--spacing-4, 32px); }
-.gc5 { column-gap: var(--spacing-5, 64px); }
-.gc6 { column-gap: var(--spacing-6, 128px); }
-.gc7 { column-gap: var(--spacing-7, 256px); }
+.gc1 { column-gap: var(--spacing-1, 2px); }
+.gc2 { column-gap: var(--spacing-2, 4px); }
+.gc3 { column-gap: var(--spacing-3, 8px); }
+.gc4 { column-gap: var(--spacing-4, 16px); }
+.gc5 { column-gap: var(--spacing-5, 32px); }
+.gc6 { column-gap: var(--spacing-6, 64px); }
+.gc7 { column-gap: var(--spacing-7, 128px); }
 
 @container (min-width:30em) {
   .gc0-s { column-gap: var(--spacing-0, 0); }
-  .gc1-s { column-gap: var(--spacing-1, 4px); }
-  .gc2-s { column-gap: var(--spacing-2, 8px); }
-  .gc3-s { column-gap: var(--spacing-3, 16px); }
-  .gc4-s { column-gap: var(--spacing-4, 32px); }
-  .gc5-s { column-gap: var(--spacing-5, 64px); }
-  .gc6-s { column-gap: var(--spacing-6, 128px); }
-  .gc7-s { column-gap: var(--spacing-7, 256px); }
+  .gc1-s { column-gap: var(--spacing-1, 2px); }
+  .gc2-s { column-gap: var(--spacing-2, 4px); }
+  .gc3-s { column-gap: var(--spacing-3, 8px); }
+  .gc4-s { column-gap: var(--spacing-4, 16px); }
+  .gc5-s { column-gap: var(--spacing-5, 32px); }
+  .gc6-s { column-gap: var(--spacing-6, 64px); }
+  .gc7-s { column-gap: var(--spacing-7, 128px); }
 }
 
 @container (min-width:48em) {
   .gc0-m { column-gap: var(--spacing-0, 0); }
-  .gc1-m { column-gap: var(--spacing-1, 4px); }
-  .gc2-m { column-gap: var(--spacing-2, 8px); }
-  .gc3-m { column-gap: var(--spacing-3, 16px); }
-  .gc4-m { column-gap: var(--spacing-4, 32px); }
-  .gc5-m { column-gap: var(--spacing-5, 64px); }
-  .gc6-m { column-gap: var(--spacing-6, 128px); }
-  .gc7-m { column-gap: var(--spacing-7, 256px); }
+  .gc1-m { column-gap: var(--spacing-1, 2px); }
+  .gc2-m { column-gap: var(--spacing-2, 4px); }
+  .gc3-m { column-gap: var(--spacing-3, 8px); }
+  .gc4-m { column-gap: var(--spacing-4, 16px); }
+  .gc5-m { column-gap: var(--spacing-5, 32px); }
+  .gc6-m { column-gap: var(--spacing-6, 64px); }
+  .gc7-m { column-gap: var(--spacing-7, 128px); }
 }
 
 
