@@ -16,6 +16,26 @@ const root = path.join(__dirname, '..');
 const srcDir = path.join(root, 'src');
 const cssPath = path.join(root, 'css', 'tackeons.css');
 const minPath = path.join(root, 'css', 'tackeons.min.css');
+const baselinePath = path.join(__dirname, 'baseline.json');
+const UPDATE_BASELINE = process.argv.includes('--update-baseline');
+const BASELINE_GATE_PCT = 5; // brotli growth > this % vs baseline fails (override: --update-baseline + commit both)
+
+function loadBaseline() {
+  try { return JSON.parse(fs.readFileSync(baselinePath, 'utf8')); } catch { return null; }
+}
+
+function currentBaseline() {
+  const min = fs.existsSync(minPath) ? sizeInfo(fs.readFileSync(minPath)) : null;
+  const full = fs.existsSync(cssPath) ? sizeInfo(fs.readFileSync(cssPath)) : null;
+  return {
+    updated: new Date().toISOString(),
+    commit: (() => { try { return execSync('git rev-parse --short HEAD', { cwd: root }).toString().trim(); } catch { return 'unknown'; } })(),
+    artifacts: {
+      'css/tackeons.min.css': min ? { raw: min.raw, gzip: min.gzip, brotli: min.brotli } : null,
+      'css/tackeons.css': full ? { raw: full.raw, gzip: full.gzip, brotli: full.brotli } : null,
+    },
+  };
+}
 
 function read(p) {
   try { return fs.readFileSync(p, 'utf8'); } catch { return null; }
@@ -78,6 +98,35 @@ if (fs.existsSync(cssPath) && fs.existsSync(minPath)) {
   report.push('');
   report.push(`Total src (_*.css) raw: ${fmt(mods.reduce((s,m)=>s+m.raw,0))}`);
   report.push('');
+
+  // Baseline regression gate (scripts/baseline.json, decided 15-testing-metrics.md)
+  let baseline = loadBaseline();
+  if (!baseline || !baseline.artifacts || !baseline.artifacts['css/tackeons.min.css'] ||
+      baseline.artifacts['css/tackeons.min.css'] === null) {
+    if (UPDATE_BASELINE || !baseline) {
+      fs.writeFileSync(baselinePath, JSON.stringify(currentBaseline(), null, 2) + '\n');
+      baseline = loadBaseline();
+      report.push(`- Baseline written to scripts/baseline.json (brotli ${baseline.artifacts['css/tackeons.min.css'].brotli}) — commit it`);
+    } else {
+      report.push(`- Baseline unreadable/corrupt — run \`npm run metrics:update\` to regenerate`);
+      failures.push('Baseline missing or corrupt');
+    }
+  }
+  const baseMin = baseline && baseline.artifacts['css/tackeons.min.css'];
+  if (baseMin && typeof baseMin.brotli === 'number') {
+    const growth = ((minSz.brotli - baseMin.brotli) / baseMin.brotli) * 100;
+    const ok = growth <= BASELINE_GATE_PCT;
+    report.push(`- Brotli gate: ${fmt(minSz.brotli)} vs baseline ${fmt(baseMin.brotli)} (${growth >= 0 ? '+' : ''}${growth.toFixed(2)}%, limit +${BASELINE_GATE_PCT}%) ${ok ? 'PASS' : '**FAIL**'}`);
+    report.push(`- Raw gate: ${fmt(minSz.raw)} vs baseline ${fmt(baseMin.raw)} (${(((minSz.raw - baseMin.raw) / baseMin.raw) * 100).toFixed(2)}%)`);
+    if (!ok) {
+      if (UPDATE_BASELINE) {
+        fs.writeFileSync(baselinePath, JSON.stringify(currentBaseline(), null, 2) + '\n');
+        report.push(`- **Baseline updated** (--update-baseline): ${fmt(baseMin.brotli)} → ${fmt(minSz.brotli)} — commit scripts/baseline.json with your change`);
+      } else {
+        failures.push(`Brotli size grew +${growth.toFixed(1)}% over scripts/baseline.json (${baseMin.brotli} → ${minSz.brotli}). If intentional, run \`npm run metrics:update\` and commit baseline.json together with the change.`);
+      }
+    }
+  }
 } else {
   report.push(`- Skipped size (no build)`);
   report.push('');
@@ -253,7 +302,6 @@ report.push('');
 report.push(`## 9. Summary`);
 if (failures.length === 0) {
   report.push(`**PASS** — No failures. Metrics OK.`);
-  report.push(`- Brotli size: ${fs.existsSync(minPath) ? sizeInfo(fs.readFileSync(minPath)).brotli : 'N/A'} bytes (baseline 15533 after flex fix)`);
 } else {
   report.push(`**FAIL** — ${failures.length} failures:`);
   failures.forEach(f => report.push(`- ${f}`));
